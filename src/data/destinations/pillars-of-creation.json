@@ -6,6 +6,12 @@
   "constellation": "Serpens",
   "image": "/destinations/pillars-of-creation.jpg",
   "introduction": "You're looking at stellar nurseries 6,500 light-years away — so far that the light reaching your eyes right now left before ancient Rome fell. These towering columns of gas and dust are the Pillars of Creation, sculpted by the fierce ultraviolet radiation of newborn stars blazing just out of frame. Each pillar stretches several light-years tall; the tallest would dwarf the distance between our Sun and its nearest stellar neighbor. Inside these dark, opaque fingers, new solar systems are quietly assembling themselves from the same raw ingredients that once made you. Webb's infrared eyes pierce through dust that was opaque to Hubble, revealing hundreds of embryonic stars embedded in the columns' walls — orange-red specks caught in the act of ignition. This is not destruction you're witnessing, but creation: an ongoing stellar maternity ward that has been producing stars for millions of years. Explore the hotspots to zoom into individual pillars and meet some of the youngest suns in our galaxy.",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 8423,
+    "height": 14589,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2207a/"
+  },
   "hotspots": [],
   "scaleTranslations": [],
   "nasaSource": "https://www.nasa.gov/image-article/webb-captures-iconic-pillars-of-creation/",

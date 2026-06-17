@@ -6,6 +6,12 @@
   "constellation": "Carina",
   "image": "/destinations/carina-nebula.jpg",
   "introduction": "You're standing at the edge of a cosmic cliff — a wall of hot gas and dust seven light-years tall at the rim of the Carina Nebula, 7,600 light-years from Earth. What looks like a churning, sunlit landscape is actually the boundary between two massive clouds of interstellar gas, heated to incandescence by the radiation pouring off young, massive stars hidden just above the frame. This image captures the moment of violent creation: stellar winds carve cavities in the nebula, and the pressure wave compresses nearby gas until it ignites into new stars. Those wisps rising from the cliff face like steam aren't mist — they're jets of material launched by infant stars still embedded in the cloud, blasting their way out into open space. Webb revealed this nursery in unprecedented detail because infrared light cuts straight through the dust that hides it from optical telescopes. The mountains and valleys you see are shaped by forces you can barely imagine, at scales that humble every map humanity has ever drawn. Explore the hotspots to understand what you're really seeing here.",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 14575,
+    "height": 8441,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2205a/"
+  },
   "hotspots": [],
   "scaleTranslations": [],
   "nasaSource": "https://www.nasa.gov/image-article/nasas-webb-reveals-cosmic-cliffs-glittering-landscape-of-star-birth/",

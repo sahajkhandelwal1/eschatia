@@ -1,7 +1,7 @@
 import OpenSeadragon from 'openseadragon';
 import { useEffect, useRef } from 'react';
 
-export default function Viewer({ imageUrl, onViewerReady }) {
+export default function Viewer({ imageUrl, tileSource, onViewerReady }) {
   const containerRef = useRef(null);
   const viewerRef = useRef(null);
 
@@ -15,7 +15,7 @@ export default function Viewer({ imageUrl, onViewerReady }) {
     const viewer = OpenSeadragon({
       element: containerRef.current,
       prefixUrl: 'https://cdn.jsdelivr.net/npm/openseadragon@5/build/openseadragon/images/',
-      tileSources: { type: 'image', url: imageUrl, buildPyramid: false },
+      tileSources: tileSource || { type: 'image', url: imageUrl, buildPyramid: false },
       defaultZoomLevel: 0,
       showNavigationControl: false,
     });

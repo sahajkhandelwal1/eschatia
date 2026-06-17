@@ -56,7 +56,7 @@ export default function Destination() {
     >
       {/* Full-screen viewer */}
       <div className="absolute inset-0">
-        <Viewer imageUrl={destination.image} onViewerReady={setViewer} />
+        <Viewer imageUrl={destination.image} tileSource={destination.tileSource || null} onViewerReady={setViewer} />
       </div>
 
       {/* Top bar */}
