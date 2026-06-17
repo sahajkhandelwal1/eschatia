@@ -1,0 +1,13 @@
+{
+  "id": "smacs-0723",
+  "name": "SMACS 0723",
+  "type": "Deep field / gravitational lensing",
+  "distance": "4.6 billion light-years",
+  "constellation": "Volans",
+  "image": "/destinations/smacs-0723.jpg",
+  "introduction": "",
+  "hotspots": [],
+  "scaleTranslations": [],
+  "nasaSource": "https://www.nasa.gov/image-article/nasas-webb-delivers-deepest-infrared-image-of-universe-yet/",
+  "releaseDate": "2022-07-11"
+}

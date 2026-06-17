@@ -1,0 +1,13 @@
+{
+  "id": "neptune-rings",
+  "name": "Neptune Rings",
+  "type": "Solar system",
+  "distance": "4.4 billion km",
+  "constellation": "Aquarius",
+  "image": "/destinations/neptune-rings.jpg",
+  "introduction": "",
+  "hotspots": [],
+  "scaleTranslations": [],
+  "nasaSource": "https://www.nasa.gov/image-article/webbs-first-image-of-neptune-rings/",
+  "releaseDate": "2022-09-21"
+}

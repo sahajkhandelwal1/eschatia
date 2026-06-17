@@ -1,0 +1,13 @@
+{
+  "id": "carina-nebula",
+  "name": "Carina Nebula",
+  "type": "Star-forming region",
+  "distance": "7,600 light-years",
+  "constellation": "Carina",
+  "image": "/destinations/carina-nebula.jpg",
+  "introduction": "",
+  "hotspots": [],
+  "scaleTranslations": [],
+  "nasaSource": "https://www.nasa.gov/image-article/nasas-webb-reveals-cosmic-cliffs-glittering-landscape-of-star-birth/",
+  "releaseDate": "2022-07-12"
+}

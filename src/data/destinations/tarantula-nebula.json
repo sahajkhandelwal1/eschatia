@@ -1,0 +1,13 @@
+{
+  "id": "tarantula-nebula",
+  "name": "Tarantula Nebula",
+  "type": "Star-forming region",
+  "distance": "161,000 light-years",
+  "constellation": "Dorado",
+  "image": "/destinations/tarantula-nebula.jpg",
+  "introduction": "",
+  "hotspots": [],
+  "scaleTranslations": [],
+  "nasaSource": "https://www.nasa.gov/image-article/nasa-webb-images-tarantula-nebula/",
+  "releaseDate": "2022-09-06"
+}

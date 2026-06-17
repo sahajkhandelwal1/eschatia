@@ -1,0 +1,13 @@
+{
+  "id": "southern-ring-nebula",
+  "name": "Southern Ring Nebula",
+  "type": "Planetary nebula",
+  "distance": "2,000 light-years",
+  "constellation": "Vela",
+  "image": "/destinations/southern-ring-nebula.jpg",
+  "introduction": "",
+  "hotspots": [],
+  "scaleTranslations": [],
+  "nasaSource": "https://www.nasa.gov/image-article/nasas-webb-captures-dying-stars-final-performance/",
+  "releaseDate": "2022-07-12"
+}

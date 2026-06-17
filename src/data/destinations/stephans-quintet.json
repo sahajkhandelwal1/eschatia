@@ -1,0 +1,13 @@
+{
+  "id": "stephans-quintet",
+  "name": "Stephan's Quintet",
+  "type": "Galaxy cluster",
+  "distance": "290 million light-years",
+  "constellation": "Pegasus",
+  "image": "/destinations/stephans-quintet.jpg",
+  "introduction": "",
+  "hotspots": [],
+  "scaleTranslations": [],
+  "nasaSource": "https://www.nasa.gov/image-article/webbs-first-images-stephan-quintet/",
+  "releaseDate": "2022-07-12"
+}

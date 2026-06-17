@@ -1,0 +1,13 @@
+{
+  "id": "pillars-of-creation",
+  "name": "Pillars of Creation",
+  "type": "Stellar nursery",
+  "distance": "6,500 light-years",
+  "constellation": "Serpens",
+  "image": "/destinations/pillars-of-creation.jpg",
+  "introduction": "",
+  "hotspots": [],
+  "scaleTranslations": [],
+  "nasaSource": "https://www.nasa.gov/image-article/webb-captures-iconic-pillars-of-creation/",
+  "releaseDate": "2022-10-19"
+}
