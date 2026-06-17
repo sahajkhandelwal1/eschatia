@@ -217,4 +217,3 @@ One: image tiling. NASA's public release images for some destinations are very l
 Two: hotspot coordinate system. Hotspot x/y values need to be expressed as fractions of image dimensions (0.0–1.0) so they scale correctly at any zoom level in OpenSeadragon. This needs testing early — get one destination fully working with hotspots before writing coordinates for all ten.
 Three: narration writing. This is the most time-intensive part of the project and the hardest to parallelize with coding. Consider writing narration for 3 destinations first (enough to ship), then completing the remaining 7 during the post-ship buffer.
 Four: domain. eschatia.space is the ideal domain and almost certainly available. Costs ~$12/year. Spend 40 stardust from the Stardance shop on the free domain grant to cover it.
-

@@ -92,7 +92,7 @@ export default function HorizonHero() {
         animate="visible"
         custom={1.0}
       >
-        <span className="text-xs uppercase tracking-widest">Scroll</span>
+        <span className="text-xs uppercase tracking-widest"></span>
         <div className="w-px h-8 bg-gradient-to-b from-white/30 to-transparent" />
       </motion.div>
     </section>
