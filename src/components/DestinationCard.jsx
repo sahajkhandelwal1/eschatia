@@ -1,10 +1,13 @@
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 export default function DestinationCard({ destination }) {
   const navigate = useNavigate();
 
   return (
-    <button
+    <motion.button
+      layoutId={`card-${destination.id}`}
+      whileHover={{ scale: 1.02 }}
       onClick={() => navigate(`/destination/${destination.id}`)}
       className="group relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-white/10 hover:border-gold/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/50"
     >
@@ -36,6 +39,6 @@ export default function DestinationCard({ destination }) {
       <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <span className="text-gold text-xs uppercase tracking-widest">Enter →</span>
       </div>
-    </button>
+    </motion.button>
   );
 }
