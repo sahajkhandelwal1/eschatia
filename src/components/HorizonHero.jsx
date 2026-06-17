@@ -59,7 +59,6 @@ export default function HorizonHero() {
         custom={0.55}
       >
         Narrated journeys through the universe's most astonishing imagery.
-        No physics background required.
       </motion.p>
 
       {/* CTAs */}
