@@ -9,7 +9,7 @@ export default function NarrationPanel({ destination, activeHotspot, onClose }) 
       initial={{ x: 320, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: 320, opacity: 0 }}
-      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 30, delay: 0.6 }}
       className="fixed right-0 top-0 bottom-0 z-20 flex"
     >
       {/* Chevron toggle strip */}

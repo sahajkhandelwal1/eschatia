@@ -47,11 +47,13 @@ export default function Destination() {
   }
 
   return (
+    // Viewer fades in from black: starts opacity 0, fades to 1 over 400ms with 100ms delay.
+    // This syncs with the black overlay from Landing.jsx fading out after navigation.
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.4, delay: 0.1, ease: 'easeOut' }}
       className="relative w-full h-screen overflow-hidden bg-space-950"
     >
       {/* Full-screen viewer */}
@@ -59,8 +61,13 @@ export default function Destination() {
         <Viewer imageUrl={destination.image} tileSource={destination.tileSource || null} onViewerReady={setViewer} />
       </div>
 
-      {/* Top bar */}
-      <div className="absolute top-0 left-0 right-0 z-10 flex items-center gap-4 px-5 py-4 bg-gradient-to-b from-space-950/80 to-transparent">
+      {/* Top bar — fades in after viewer settles */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.6 }}
+        className="absolute top-0 left-0 right-0 z-10 flex items-center gap-4 px-5 py-4 bg-gradient-to-b from-space-950/80 to-transparent"
+      >
         <Link
           to="/"
           className="text-white/60 hover:text-white transition-colors text-sm"
@@ -72,9 +79,9 @@ export default function Destination() {
           <span className="text-white text-sm font-medium leading-tight">{destination.name}</span>
           <span className="text-white/40 text-xs">{destination.distance}</span>
         </div>
-      </div>
+      </motion.div>
 
-      {/* Narration panel */}
+      {/* NarrationPanel animates in with its own 0.6s delay (set in NarrationPanel.jsx) */}
       <NarrationPanel
         destination={destination}
         activeHotspot={activeHotspot}
