@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Starfield from '../components/Starfield';
 import HorizonHero from '../components/HorizonHero';
@@ -50,15 +50,15 @@ export default function Landing() {
       <nav className="relative z-10 flex items-center justify-between px-6 md:px-10 py-5">
         <span className="text-white/90 text-base font-light italic tracking-wide">ἐσχατιά</span>
         <div className="flex items-center gap-6 text-white/50 text-xs uppercase tracking-widest">
-          <a href="/explore" className="hover:text-white transition-colors">Explore</a>
-          <a href="/discoveries" className="hover:text-white transition-colors">Discoveries</a>
-          <a href="/about" className="hover:text-white transition-colors">About</a>
-          <a
-            href="/explore"
+          <Link to="/explore" className="hover:text-white transition-colors">Explore</Link>
+          <Link to="/discoveries" className="hover:text-white transition-colors">Discoveries</Link>
+          <Link to="/about" className="hover:text-white transition-colors">About</Link>
+          <Link
+            to="/explore"
             className="px-4 py-2 border border-gold/40 text-gold hover:bg-gold/10 transition-colors rounded text-xs"
           >
             Enter
-          </a>
+          </Link>
         </div>
       </nav>
 
