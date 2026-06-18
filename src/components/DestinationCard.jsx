@@ -1,14 +1,22 @@
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-export default function DestinationCard({ destination }) {
+export default function DestinationCard({ destination, onEnter }) {
   const navigate = useNavigate();
+
+  function handleClick() {
+    if (onEnter) {
+      onEnter(destination.id);
+    } else {
+      navigate(`/destination/${destination.id}`);
+    }
+  }
 
   return (
     <motion.button
       layoutId={`card-${destination.id}`}
       whileHover={{ scale: 1.02 }}
-      onClick={() => navigate(`/destination/${destination.id}`)}
+      onClick={handleClick}
       className="group relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-white/10 hover:border-gold/50 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold/50"
     >
       {/* Image */}
@@ -16,7 +24,7 @@ export default function DestinationCard({ destination }) {
         <img
           src={destination.image}
           alt={destination.name}
-          className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity duration-500"
+          className="w-full h-full object-cover object-center opacity-70 group-hover:opacity-90 transition-opacity duration-500"
           loading="lazy"
         />
       </div>
