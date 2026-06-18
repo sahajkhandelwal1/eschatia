@@ -13,6 +13,19 @@ const fadeUp = {
 export default function HorizonHero() {
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center">
+      {/* Watermark */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden"
+      >
+        <span
+          className="text-white font-light italic whitespace-nowrap"
+          style={{ fontSize: 'clamp(6rem, 22vw, 22rem)', opacity: 0.025, letterSpacing: '-0.02em' }}
+        >
+          ἐσχατιά
+        </span>
+      </div>
+
       {/* Horizon glow line */}
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
       <div className="absolute bottom-0 left-1/4 right-1/4 h-16 bg-gold/5 blur-2xl pointer-events-none" />

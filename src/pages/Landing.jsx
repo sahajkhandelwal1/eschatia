@@ -48,7 +48,7 @@ export default function Landing() {
 
       {/* Nav */}
       <nav className="relative z-10 flex items-center justify-between px-6 md:px-10 py-5">
-        <span className="text-white text-sm uppercase tracking-widest font-medium">Eschatia</span>
+        <span className="text-white/90 text-base font-light italic tracking-wide">ἐσχατιά</span>
         <div className="flex items-center gap-6 text-white/50 text-xs uppercase tracking-widest">
           <a href="/explore" className="hover:text-white transition-colors">Explore</a>
           <a href="/discoveries" className="hover:text-white transition-colors">Discoveries</a>

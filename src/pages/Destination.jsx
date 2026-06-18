@@ -73,7 +73,7 @@ export default function Destination() {
           className="text-white/60 hover:text-white transition-colors text-sm"
           aria-label="Back to home"
         >
-          ←
+          <span className="italic font-light text-sm">ἐσχατιά</span>
         </Link>
         <div className="flex flex-col">
           <span className="text-white text-sm font-medium leading-tight">{destination.name}</span>

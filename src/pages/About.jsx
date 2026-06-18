@@ -18,8 +18,8 @@ export default function About() {
 
       {/* Nav */}
       <nav className="relative z-10 flex items-center justify-between px-6 md:px-10 py-5">
-        <Link to="/" className="text-white text-sm uppercase tracking-widest font-medium hover:text-gold transition-colors">
-          Eschatia
+        <Link to="/" className="text-white/90 text-base font-light italic tracking-wide hover:text-gold transition-colors">
+          ἐσχατιά
         </Link>
         <div className="flex items-center gap-6 text-white/50 text-xs uppercase tracking-widest">
           <Link to="/explore" className="hover:text-white transition-colors">Explore</Link>
@@ -154,36 +154,7 @@ export default function About() {
           </p>
         </motion.div>
 
-        {/* Built by */}
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={0.85}
-          className="mb-12"
-        >
-          <p className="text-gold text-xs uppercase tracking-widest mb-4">Built by</p>
-          <p className="text-white/60 text-sm leading-relaxed">
-            Sahaj Khandelwal — built for{' '}
-            <a
-              href="https://stardance.hackclub.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gold/80 hover:text-gold transition-colors underline underline-offset-2"
-            >
-              Stardance
-            </a>{' '}
-            by Hack Club.{' '}
-            <a
-              href="https://github.com/sahajkhandelwal1/eschatia"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gold/80 hover:text-gold transition-colors underline underline-offset-2"
-            >
-              Open source on GitHub.
-            </a>
-          </p>
-        </motion.div>
+        
 
         {/* CTA */}
         <motion.div
