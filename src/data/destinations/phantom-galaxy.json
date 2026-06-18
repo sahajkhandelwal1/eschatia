@@ -5,6 +5,12 @@
   "distance": "32 million light-years",
   "constellation": "Pisces",
   "image": "/destinations/phantom-galaxy.jpg",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 5047,
+    "height": 3136,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/potm2208b/"
+  },
   "introduction": "",
   "hotspots": [],
   "scaleTranslations": [],

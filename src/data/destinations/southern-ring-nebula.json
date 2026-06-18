@@ -5,6 +5,12 @@
   "distance": "2,000 light-years",
   "constellation": "Vela",
   "image": "/destinations/southern-ring-nebula.jpg",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 4833,
+    "height": 4501,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2207b/"
+  },
   "introduction": "",
   "hotspots": [],
   "scaleTranslations": [],

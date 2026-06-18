@@ -5,6 +5,12 @@
   "distance": "4.4 billion km",
   "constellation": "Aquarius",
   "image": "/destinations/neptune-rings.jpg",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 4253,
+    "height": 4134,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2214d/"
+  },
   "introduction": "",
   "hotspots": [],
   "scaleTranslations": [],

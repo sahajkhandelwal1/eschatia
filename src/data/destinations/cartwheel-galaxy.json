@@ -5,6 +5,12 @@
   "distance": "500 million light-years",
   "constellation": "Sculptor",
   "image": "/destinations/cartwheel-galaxy.jpg",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 4685,
+    "height": 4312,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2211a/"
+  },
   "introduction": "",
   "hotspots": [],
   "scaleTranslations": [],

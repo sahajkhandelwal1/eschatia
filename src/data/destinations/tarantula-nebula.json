@@ -5,6 +5,12 @@
   "distance": "161,000 light-years",
   "constellation": "Dorado",
   "image": "/destinations/tarantula-nebula.jpg",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 14557,
+    "height": 8418,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2212a/"
+  },
   "introduction": "",
   "hotspots": [],
   "scaleTranslations": [],

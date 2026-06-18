@@ -5,6 +5,12 @@
   "distance": "290 million light-years",
   "constellation": "Pegasus",
   "image": "/destinations/stephans-quintet.jpg",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 12654,
+    "height": 12132,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2208a/"
+  },
   "introduction": "",
   "hotspots": [],
   "scaleTranslations": [],

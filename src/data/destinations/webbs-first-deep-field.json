@@ -5,6 +5,12 @@
   "distance": "13.1 billion light-years",
   "constellation": "Volans",
   "image": "/destinations/webbs-first-deep-field.jpg",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 4537,
+    "height": 4630,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2209a/"
+  },
   "introduction": "",
   "hotspots": [],
   "scaleTranslations": [],
