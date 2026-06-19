@@ -26,7 +26,7 @@ export default function Landing() {
 
       {/* Nav */}
       <nav className="relative z-10 flex items-center justify-between px-6 md:px-10 py-5">
-        <span className="text-white/90 text-base font-light italic tracking-wide">ἐσχατιά</span>
+        <Link to="/" className="text-white/90 text-base font-light italic tracking-wide hover:text-gold transition-colors">ἐσχατιά</Link>
         <div className="flex items-center gap-6 text-white/50 text-xs uppercase tracking-widest">
           <Link to="/explore" className="hover:text-white transition-colors">Explore</Link>
           <Link to="/discoveries" className="hover:text-white transition-colors">Discoveries</Link>
