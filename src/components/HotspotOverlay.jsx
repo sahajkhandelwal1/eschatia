@@ -9,22 +9,8 @@ function injectStyles() {
   const style = document.createElement('style');
   style.id = STYLE_ID;
   style.textContent = `
-    /* Large transparent hit area — easy to tap/click */
+    /* Visual-only overlay — clicks handled by OSD canvas-click, not DOM */
     .hotspot-pin {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: transparent;
-      border: none;
-      padding: 0;
-      cursor: pointer;
-      pointer-events: auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    /* Visual gold dot in the center */
-    .hotspot-dot {
       width: 12px;
       height: 12px;
       border-radius: 50%;
@@ -32,11 +18,9 @@ function injectStyles() {
       border: 2px solid #d4af37;
       box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
       position: relative;
-      transition: transform 0.15s ease;
-      flex-shrink: 0;
+      pointer-events: none;
     }
-    .hotspot-pin:hover .hotspot-dot { transform: scale(1.4); }
-    .hotspot-dot::before {
+    .hotspot-pin::before {
       content: '';
       position: absolute;
       inset: -6px;
@@ -44,7 +28,7 @@ function injectStyles() {
       border: 2px solid rgba(212, 175, 55, 0.45);
       animation: hpin-pulse 2s ease-out infinite;
     }
-    .hotspot-dot::after {
+    .hotspot-pin::after {
       content: '';
       position: absolute;
       inset: -13px;
@@ -73,17 +57,10 @@ export default function HotspotOverlay({ viewer, hotspots }) {
     });
     overlayEls.current = [];
 
+    // Visual-only pins — no click handlers on DOM elements
     hotspots.forEach(hotspot => {
-      const el = document.createElement('button');
+      const el = document.createElement('div');
       el.className = 'hotspot-pin';
-      el.setAttribute('aria-label', hotspot.label);
-      const dot = document.createElement('div');
-      dot.className = 'hotspot-dot';
-      el.appendChild(dot);
-      el.addEventListener('click', (e) => {
-        e.stopPropagation();
-        setActive(hotspot);
-      });
 
       viewer.addOverlay({
         element: el,
@@ -95,11 +72,30 @@ export default function HotspotOverlay({ viewer, hotspots }) {
       overlayEls.current.push(el);
     });
 
+    // OSD canvas-click fires reliably; check screen-space proximity (22px radius)
+    const handleCanvasClick = (event) => {
+      for (const hotspot of hotspots) {
+        const pinPx = viewer.viewport.viewportToViewerElementCoordinates(
+          new OpenSeadragon.Point(hotspot.x, hotspot.y)
+        );
+        const dx = event.position.x - pinPx.x;
+        const dy = event.position.y - pinPx.y;
+        if (Math.sqrt(dx * dx + dy * dy) < 22) {
+          event.preventDefaultAction = true;
+          setActive(hotspot);
+          return;
+        }
+      }
+    };
+
+    viewer.addHandler('canvas-click', handleCanvasClick);
+
     return () => {
       overlayEls.current.forEach(el => {
         try { viewer.removeOverlay(el); } catch (_) {}
       });
       overlayEls.current = [];
+      viewer.removeHandler('canvas-click', handleCanvasClick);
     };
   }, [viewer, hotspots]);
 
