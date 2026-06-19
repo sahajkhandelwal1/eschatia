@@ -5,15 +5,48 @@
   "distance": "161,000 light-years",
   "constellation": "Dorado",
   "image": "/destinations/tarantula-nebula.jpg",
+  "introduction": "You're looking at the most violent star factory in our cosmic neighborhood — the Tarantula Nebula, 161,000 light-years away in the Large Magellanic Cloud, our nearest galactic neighbor. If it were as close to Earth as the Orion Nebula, it would cast shadows at night. At its heart burns R136, a cluster of the most massive stars known to exist, some exceeding 200 times the mass of our Sun. These behemoths pour out so much ultraviolet radiation that they're physically destroying the nebula around them — carving vast glowing cavities, compressing surrounding gas into the next wave of stars, and launching stellar winds that reshape everything for hundreds of light-years. Webb's infrared vision cuts through the dust to reveal thousands of never-before-seen young stars embedded in the nebula's pillars and filaments — objects too shrouded in dust for any previous telescope to detect. The tentacle-like filaments that give the Tarantula its name are enormous columns of gas and dust, each one dwarfing the famous Pillars of Creation. Explore the hotspots to trace the full arc of stellar creation and destruction happening simultaneously here.",
   "tileSource": {
     "type": "zoomifytileservice",
     "width": 14557,
     "height": 8418,
     "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2212a/"
   },
-  "introduction": "",
-  "hotspots": [],
-  "scaleTranslations": [],
+  "hotspots": [
+    {
+      "id": "r136-cluster",
+      "label": "R136 Star Cluster",
+      "x": 0.48,
+      "y": 0.21,
+      "description": "The blazing core of the Tarantula: R136 packs over 100,000 stars into a region just a few light-years across, including some of the most massive stars ever found. The heavyweight champion, R136a1, tips the scale at around 200 solar masses — so extreme its very existence challenges models of how large a star can be. These behemoths burn through their hydrogen in just a few million years before detonating as supernovae. What would the sky look like from a planet orbiting one of these stars?"
+    },
+    {
+      "id": "dust-pillars",
+      "label": "Dust Pillars",
+      "x": 0.34,
+      "y": 0.39,
+      "description": "These dark, towering columns are the Tarantula's answer to the Pillars of Creation — but on a scale that dwarfs them. Each pillar is hundreds of light-years long; the entire Pillars of Creation would fit inside one of these structures with room to spare. Webb's infrared vision penetrates the dust to reveal young stars forming inside the columns, hidden from optical telescopes by the same material that makes the pillars appear dark. The radiation from R136 is slowly eroding these columns from the outside while new suns ignite within."
+    },
+    {
+      "id": "shock-cavity",
+      "label": "Stellar Wind Cavity",
+      "x": 0.65,
+      "y": 0.27,
+      "description": "Stellar winds from R136's massive stars have carved this glowing bubble into the surrounding nebula. The boundary shines because compressed gas is heated to incandescence as the wind slams into it. Inside, the gas has been largely swept clean. This process — massive stars destroying their own birth cloud — is how the universe self-regulates star formation. The same thing happened near our Sun 4.6 billion years ago; our solar system coalesced from the compressed remnants left behind after a wind-blown cavity like this one collapsed."
+    },
+    {
+      "id": "infant-stars",
+      "label": "Emerging Protostars",
+      "x": 0.76,
+      "y": 0.43,
+      "description": "Farther from R136's radiation, stars are still forming in relative shelter. Webb detected hundreds of previously unknown protostars here — objects between 1 and 40 solar masses in the earliest stages of nuclear ignition. At 161,000 light-years, resolving individual young stars is a feat no ground telescope could match. These stars may be just a few hundred thousand years old, forming right now — though 'now' means 161,000 years ago, when this light began its journey. The light reaching your eyes left before Homo sapiens evolved on Earth."
+    }
+  ],
+  "scaleTranslations": [
+    "The Tarantula Nebula spans 1,000 light-years — if it replaced the Orion Nebula in our sky, it would cover an area 60 times larger than the full moon and cast visible shadows on Earth at night.",
+    "R136a1, the cluster's most massive star, contains ~200 solar masses. If placed where our Sun sits, its outer atmosphere would extend nearly to the orbit of Mercury.",
+    "At 161,000 light-years away, the light you're seeing left the Tarantula before our species existed — it has been traveling toward Earth since long before the first cave paintings were made."
+  ],
   "nasaSource": "https://www.nasa.gov/image-article/nasa-webb-images-tarantula-nebula/",
   "releaseDate": "2022-09-06"
 }
