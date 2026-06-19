@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { useEffect } from 'react';
+import { PageTransitionProvider } from './context/PageTransition';
 import Landing from './pages/Landing';
 import Explore from './pages/Explore';
 import Destination from './pages/Destination';
@@ -31,8 +32,10 @@ function AppRoutes() {
 export default function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
-      <AppRoutes />
+      <PageTransitionProvider>
+        <ScrollToTop />
+        <AppRoutes />
+      </PageTransitionProvider>
     </BrowserRouter>
   );
 }

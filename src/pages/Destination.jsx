@@ -1,6 +1,7 @@
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { usePageTransition } from '../context/PageTransition';
 import Viewer from '../components/Viewer';
 import NarrationPanel from '../components/NarrationPanel';
 import HotspotOverlay from '../components/HotspotOverlay';
@@ -36,16 +37,13 @@ export default function Destination() {
   const location = useLocation();
   const destination = DESTINATIONS[id];
   const [viewer, setViewer] = useState(null);
-  const [leaving, setLeaving] = useState(false);
+  const { triggerFade } = usePageTransition();
 
-  // Where did the user come from? Default to home.
   const backPath = location.state?.from || '/';
   const backLabel = backPath === '/explore' ? 'All destinations' : 'Home';
 
   const handleBack = (to) => {
-    if (leaving) return;
-    setLeaving(true);
-    setTimeout(() => navigate(to ?? backPath), 380);
+    triggerFade(() => navigate(to ?? backPath));
   };
 
   if (!destination) {
@@ -53,7 +51,7 @@ export default function Destination() {
       <div className="flex flex-col items-center justify-center h-screen bg-space-950 text-white gap-4">
         <p className="text-white/60 text-lg">Destination not found.</p>
         <button
-          onClick={() => handleBack('/')}
+          onClick={() => triggerFade(() => navigate('/'))}
           className="text-gold text-sm uppercase tracking-widest hover:text-white transition-colors"
         >
           ← Back to Home
@@ -115,19 +113,6 @@ export default function Destination() {
 
       <NarrationPanel destination={destination} />
       <ScaleSidebar scaleTranslations={destination.scaleTranslations} />
-
-      {/* Cinematic exit — black fade before navigation */}
-      <AnimatePresence>
-        {leaving && (
-          <motion.div
-            key="exit-overlay"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.35, ease: 'easeIn' }}
-            className="fixed inset-0 z-50 bg-black pointer-events-none"
-          />
-        )}
-      </AnimatePresence>
     </motion.div>
   );
 }
