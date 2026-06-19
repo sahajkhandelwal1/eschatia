@@ -12,8 +12,41 @@
     "height": 8441,
     "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2205a/"
   },
-  "hotspots": [],
-  "scaleTranslations": [],
+  "hotspots": [
+    {
+      "id": "cosmic-cliff",
+      "label": "The Cosmic Cliff",
+      "x": 0.48,
+      "y": 0.28,
+      "description": "This dramatic boundary is the edge of a giant molecular cloud — the cliff between regions of ionized gas carved out by stellar radiation above, and the dense, dark cloud below where new stars are still forming. The glowing orange-blue rim marks where ultraviolet radiation from massive stars is eroding the cloud's surface. This process, called photodissociation, releases gas that fuels the nebula's glow. The cliff isn't static — it's retreating deeper into the cloud as radiation eats away at it. How far do you think it will erode before the cloud is gone?"
+    },
+    {
+      "id": "protostellar-jets",
+      "label": "Protostellar Jets",
+      "x": 0.25,
+      "y": 0.40,
+      "description": "Those bright streaks shooting upward from the cliff face aren't cracks in the cloud — they're Herbig-Haro objects: jets of superheated gas launched at hundreds of kilometers per second by infant stars still buried deep inside the nebula. As a protostar forms, its magnetic field channels material from its surrounding disk into twin jets blasting perpendicular to the disk plane. These jets pierce through the cloud and shock the surrounding gas into glowing. Webb revealed dozens of these jets for the first time in Carina, hidden until now behind dust."
+    },
+    {
+      "id": "emerging-star",
+      "label": "Emerging Star",
+      "x": 0.65,
+      "y": 0.20,
+      "description": "That bright point breaking above the cliff line is a newly formed star that has already blasted clear of its birth cloud, clearing a bubble of space around itself with its stellar wind. This is what the Pillars of Creation will eventually produce: stars that burn hot enough to destroy the very nebula that made them. This particular star may be only a few hundred thousand years old — a newborn by any measure. The material it's now blowing away was part of the cloud that formed it. Stars eat their birthplaces."
+    },
+    {
+      "id": "gas-mountain",
+      "label": "Gas Mountains",
+      "x": 0.14,
+      "y": 0.38,
+      "description": "The towering structures rising from the lower nebula are pillars of dense gas similar to the Pillars of Creation, shaped by the same photoevaporation process. Dense knots of gas resist erosion while surrounding material burns away, leaving these dramatic spires. Within them, star formation is actively occurring, shielded temporarily by the very density that will eventually be stripped away. Webb's resolution is sharp enough to resolve the individual structures at the surface of these pillars — textures that no telescope has ever seen at this distance."
+    }
+  ],
+  "scaleTranslations": [
+    "The cosmic cliff in this image is 7 light-years tall — if you could drive there at highway speed, just to reach the base of the cliff from Earth would take roughly 700 billion years.",
+    "Those protostellar jets are blasting material at 400 kilometers per second — fast enough to cross the United States in under 10 seconds — and they stretch for light-years before slowing down.",
+    "The full Carina Nebula spans 460 light-years across. Even light, traveling at 300,000 km/s, would take longer than a human lifetime to cross it from one side to the other."
+  ],
   "nasaSource": "https://www.nasa.gov/image-article/nasas-webb-reveals-cosmic-cliffs-glittering-landscape-of-star-birth/",
   "releaseDate": "2022-07-12"
 }

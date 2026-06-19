@@ -12,8 +12,41 @@
     "height": 4630,
     "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2209a/"
   },
-  "hotspots": [],
-  "scaleTranslations": [],
+  "hotspots": [
+    {
+      "id": "lensing-cluster",
+      "label": "The Gravitational Lens",
+      "x": 0.50,
+      "y": 0.51,
+      "description": "The golden galaxies concentrated at center make up the SMACS 0723 cluster — a swarm of hundreds of galaxies held together by gravity and dark matter, 4.6 billion light-years away. Their combined mass acts like a cosmic magnifying glass, bending light from galaxies behind them and focusing it toward us. Without this natural telescope, the faint objects behind the cluster would be invisible even to Webb. Dark matter — invisible, undetected directly — is doing most of the lensing work here. What percentage of the universe do you think we still can't see?"
+    },
+    {
+      "id": "lensed-arc",
+      "label": "The Ancient Arc",
+      "x": 0.34,
+      "y": 0.63,
+      "description": "That curved streak of light is a single galaxy — not a smear, not a defect — stretched into an arc by the gravitational lens of SMACS 0723. The galaxy itself is over 13 billion light-years away. Gravity has bent its light around the cluster, and Webb captures multiple distorted images of the same object scattered across the field. Webb's spectrograph confirmed this galaxy emitted its light just 600 million years after the Big Bang. You are seeing a galaxy as it existed before Earth, before our Sun, before our Milky Way had fully formed."
+    },
+    {
+      "id": "distant-red",
+      "label": "The First Galaxies",
+      "x": 0.72,
+      "y": 0.28,
+      "description": "The faint reddish specks scattered across the field are among the most distant objects ever imaged. Their light has been redshifted — stretched to longer, redder wavelengths by the expansion of the universe over billions of years. Webb's infrared sensors are specifically tuned to detect this ancient, cooled light. Some of these objects formed within the first 500 million years of the universe's existence. They look small and simple from here — they were. The first galaxies were compact, turbulent, rapidly star-forming — nothing like the grand spirals we see today."
+    },
+    {
+      "id": "merging-pair",
+      "label": "Interacting Galaxies",
+      "x": 0.30,
+      "y": 0.38,
+      "description": "Several of the galaxies in this field show signs of interaction — distorted shapes, tidal streams, asymmetrical arms. Galaxy collisions are common across cosmic time; they happen in slow motion over hundreds of millions of years, and the stars within them almost never actually collide despite their galaxies merging entirely. Our own Milky Way is on a slow collision course with the Andromeda Galaxy, expected to begin merging in about 4.5 billion years. These interacting pairs here are previews of that future."
+    }
+  ],
+  "scaleTranslations": [
+    "The light from the most distant galaxies in this image traveled 13.1 billion years to reach Webb — it left before Earth existed, before our Sun ignited, before our galaxy had fully assembled.",
+    "The entire patch of sky covered by this image is smaller than a grain of sand held at arm's length from your eye, yet contains thousands of complete galaxies, each with hundreds of billions of stars.",
+    "The gravitational arc you see is a single galaxy stretched over 200,000 light-years of apparent length by a natural cosmic lens — a lens made of dark matter spanning millions of light-years."
+  ],
   "nasaSource": "https://www.nasa.gov/image-article/nasas-webb-delivers-deepest-infrared-image-of-universe-yet/",
   "releaseDate": "2022-07-11"
 }
