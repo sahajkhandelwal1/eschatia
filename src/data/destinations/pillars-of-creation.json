@@ -16,29 +16,29 @@
     {
       "id": "pillar-tips",
       "label": "The Pillar Tips",
-      "x": 0.42,
-      "y": 0.38,
+      "x": 0.26,
+      "y": 0.42,
       "description": "At the tips of each pillar, ultraviolet radiation from off-frame young stars is slowly evaporating the gas — a process astronomers call photoevaporation. The bright, hazy edges glow because hydrogen is being ionized at the boundary. Yet this same erosion triggers new star formation: the pressure wave drives gas inward, seeding the next generation. Destruction and creation happening simultaneously. What does it tell us that stars are born from the death of their own nurseries?"
     },
     {
       "id": "embedded-stars",
       "label": "Embryonic Stars",
-      "x": 0.28,
-      "y": 0.72,
+      "x": 0.23,
+      "y": 0.95,
       "description": "Those ruddy orange-red specks scattered along the pillar walls are protostars — objects that have collapsed from gas but haven't yet begun nuclear fusion. They're surrounded by spinning disks of gas and dust that may one day form planetary systems. Webb detected hundreds of these embryonic stars that Hubble couldn't see through the dust. Each orange speck you see here is a potential solar system in waiting. How many Earth-like worlds might already be forming inside this single column?"
     },
     {
       "id": "wavy-edge",
       "label": "EGGs — Evaporating Gaseous Globules",
-      "x": 0.55,
-      "y": 0.55,
+      "x": 0.50,
+      "y": 0.69,
       "description": "The finger-like protrusions along the pillar edges are EGGs — Evaporating Gaseous Globules — dense knots of gas dense enough to resist photoevaporation while everything around them gets stripped away. Each one is a stellar embryo wrapped in its own protective cocoon. As the outer gas burns off, the EGG is exposed — and if a star has already started forming inside, it appears as a bright point at the tip of the protrusion. You're watching stars unwrap themselves."
     },
     {
       "id": "background-cluster",
       "label": "Newborn Star Cluster",
-      "x": 0.78,
-      "y": 0.22,
+      "x": 0.81,
+      "y": 0.24,
       "description": "The scattered blue and white points in the upper portions of the image are young, massive stars — the same ones whose radiation is sculpting the pillars below. Some are only a few million years old, practically newborns by stellar standards. Their fierce radiation is simultaneously destroying the nebula that birthed them and triggering new star formation deeper inside. Massive stars like these live fast and die young, eventually exploding as supernovae that will scatter the material for the next cycle of creation."
     }
   ],

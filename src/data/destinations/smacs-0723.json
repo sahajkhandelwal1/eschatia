@@ -23,22 +23,22 @@
     {
       "id": "lensed-arc",
       "label": "The Ancient Arc",
-      "x": 0.34,
-      "y": 0.63,
+      "x": 0.33,
+      "y": 0.64,
       "description": "That curved streak of light is a single galaxy — not a smear, not a defect — stretched into an arc by the gravitational lens of SMACS 0723. The galaxy itself is over 13 billion light-years away. Gravity has bent its light around the cluster, and Webb captures multiple distorted images of the same object scattered across the field. Webb's spectrograph confirmed this galaxy emitted its light just 600 million years after the Big Bang. You are seeing a galaxy as it existed before Earth, before our Sun, before our Milky Way had fully formed."
     },
     {
       "id": "distant-red",
       "label": "The First Galaxies",
-      "x": 0.72,
-      "y": 0.28,
+      "x": 0.73,
+      "y": 0.26,
       "description": "The faint reddish specks scattered across the field are among the most distant objects ever imaged. Their light has been redshifted — stretched to longer, redder wavelengths by the expansion of the universe over billions of years. Webb's infrared sensors are specifically tuned to detect this ancient, cooled light. Some of these objects formed within the first 500 million years of the universe's existence. They look small and simple from here — they were. The first galaxies were compact, turbulent, rapidly star-forming — nothing like the grand spirals we see today."
     },
     {
       "id": "merging-pair",
       "label": "Interacting Galaxies",
-      "x": 0.30,
-      "y": 0.38,
+      "x": 0.24,
+      "y": 0.40,
       "description": "Several of the galaxies in this field show signs of interaction — distorted shapes, tidal streams, asymmetrical arms. Galaxy collisions are common across cosmic time; they happen in slow motion over hundreds of millions of years, and the stars within them almost never actually collide despite their galaxies merging entirely. Our own Milky Way is on a slow collision course with the Andromeda Galaxy, expected to begin merging in about 4.5 billion years. These interacting pairs here are previews of that future."
     }
   ],
