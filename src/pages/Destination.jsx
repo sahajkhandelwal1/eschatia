@@ -1,5 +1,5 @@
-import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import Viewer from '../components/Viewer';
 import NarrationPanel from '../components/NarrationPanel';
@@ -32,16 +32,32 @@ const DESTINATIONS = {
 
 export default function Destination() {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const location = useLocation();
   const destination = DESTINATIONS[id];
   const [viewer, setViewer] = useState(null);
+  const [leaving, setLeaving] = useState(false);
+
+  // Where did the user come from? Default to home.
+  const backPath = location.state?.from || '/';
+  const backLabel = backPath === '/explore' ? 'All destinations' : 'Home';
+
+  const handleBack = (to) => {
+    if (leaving) return;
+    setLeaving(true);
+    setTimeout(() => navigate(to ?? backPath), 380);
+  };
 
   if (!destination) {
     return (
       <div className="flex flex-col items-center justify-center h-screen bg-space-950 text-white gap-4">
         <p className="text-white/60 text-lg">Destination not found.</p>
-        <Link to="/" className="text-gold text-sm uppercase tracking-widest hover:text-white transition-colors">
+        <button
+          onClick={() => handleBack('/')}
+          className="text-gold text-sm uppercase tracking-widest hover:text-white transition-colors"
+        >
           ← Back to Home
-        </Link>
+        </button>
       </div>
     );
   }
@@ -63,7 +79,6 @@ export default function Destination() {
         />
       </div>
 
-      {/* Hotspot pins anchored to image coords via OSD overlay; popup is React-managed */}
       <HotspotOverlay viewer={viewer} hotspots={destination.hotspots} />
 
       {/* Top bar */}
@@ -71,26 +86,48 @@ export default function Destination() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4, delay: 0.6 }}
-        className="absolute top-0 left-0 right-0 z-10 flex items-center gap-4 px-5 py-4 bg-gradient-to-b from-space-950/80 to-transparent"
+        className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-5 py-4 bg-gradient-to-b from-space-950/80 to-transparent"
       >
-        <Link
-          to="/"
-          className="text-white/60 hover:text-white transition-colors"
-          aria-label="Back to home"
+        {/* Back button — goes to where the user came from */}
+        <button
+          onClick={() => handleBack()}
+          className="flex items-center gap-2 text-white/60 hover:text-white transition-colors group"
         >
-          <span className="italic font-light text-sm">ἐσχατιά</span>
-        </Link>
-        <div className="flex flex-col">
+          <span className="text-sm group-hover:-translate-x-0.5 transition-transform">←</span>
+          <span className="text-xs uppercase tracking-widest">{backLabel}</span>
+        </button>
+
+        {/* Destination name + distance */}
+        <div className="flex flex-col items-center">
           <span className="text-white text-sm font-medium leading-tight">{destination.name}</span>
           <span className="text-white/40 text-xs">{destination.distance}</span>
         </div>
+
+        {/* ἐσχατιά — always goes home */}
+        <button
+          onClick={() => handleBack('/')}
+          className="text-white/60 hover:text-gold transition-colors"
+          aria-label="Home"
+        >
+          <span className="italic font-light text-sm">ἐσχατιά</span>
+        </button>
       </motion.div>
 
-      {/* Narration panel — overview only */}
       <NarrationPanel destination={destination} />
-
-      {/* Scale sidebar */}
       <ScaleSidebar scaleTranslations={destination.scaleTranslations} />
+
+      {/* Cinematic exit — black fade before navigation */}
+      <AnimatePresence>
+        {leaving && (
+          <motion.div
+            key="exit-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.35, ease: 'easeIn' }}
+            className="fixed inset-0 z-50 bg-black pointer-events-none"
+          />
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }
