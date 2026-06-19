@@ -1,4 +1,7 @@
-// Manages active hotspot and narration panel state for the viewer
+import { useState, useCallback } from 'react';
+
 export function useViewerState() {
-  return { activeHotspot: null, setActiveHotspot: () => {} };
+  const [activeHotspot, setActiveHotspot] = useState(null);
+  const clearHotspot = useCallback(() => setActiveHotspot(null), []);
+  return { activeHotspot, setActiveHotspot, clearHotspot };
 }
