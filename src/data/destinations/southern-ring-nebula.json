@@ -5,15 +5,48 @@
   "distance": "2,000 light-years",
   "constellation": "Vela",
   "image": "/destinations/southern-ring-nebula.jpg",
+  "introduction": "A star died here. You are looking at its last act — a Sun-like star that spent its final thousands of years shedding its outer layers into space, puffing them outward in expanding shells of gas and dust that now glow in the dark 2,000 light-years away. What remains at center is a white dwarf: the exposed stellar core, an Earth-sized object containing half a solar mass, slowly cooling over billions of years. Webb revealed something Hubble couldn't: the dying star is actually two stars — a binary pair. The companion star has been stirring and shaping the expelled gas, warping what would otherwise be simple concentric spheres into the intricate, asymmetric structure you see. Every ring, every filament, every arc visible here is a different episode of mass loss — a snapshot of a different moment in the star's slow dissolution over tens of thousands of years. The outermost wisps left their source long before the pyramids were built. This is not a tragedy. This is how the universe recycles — the gas now drifting outward will eventually seed future molecular clouds, compress into new solar systems, and perhaps form the planets of worlds that don't yet exist. You are looking at a preview of our own Sun's fate, approximately 5 billion years from now.",
   "tileSource": {
     "type": "zoomifytileservice",
     "width": 4833,
     "height": 4501,
     "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2207b/"
   },
-  "introduction": "",
-  "hotspots": [],
-  "scaleTranslations": [],
+  "hotspots": [
+    {
+      "id": "dying-star",
+      "label": "The White Dwarf",
+      "x": 0.50,
+      "y": 0.47,
+      "description": "At the very center sits the white dwarf — the compressed remnant of what was once a star like our Sun. It has expelled roughly half its original mass into the surrounding nebula over the past several thousand years, leaving behind an Earth-sized object with the density of a million Suns packed into a marble. Webb showed this star has a binary companion whose gravitational influence has shaped the entire nebula. The white dwarf will continue cooling for billions of years, eventually becoming a cold black dwarf — though the universe isn't old enough yet for any white dwarf to have reached that stage."
+    },
+    {
+      "id": "inner-shell",
+      "label": "Inner Glowing Shell",
+      "x": 0.68,
+      "y": 0.46,
+      "description": "The bright inner ring glows because it's still close enough to the hot white dwarf to be ionized by its ultraviolet radiation — electrons stripped from atoms, releasing light as they recombine. Webb's spectroscopy detected at least 20 molecular compounds in this shell, including polycyclic aromatic hydrocarbons (PAHs) — complex carbon molecules found in soot on Earth and in interstellar clouds where new stars form. The dying star is literally seeding its surroundings with the chemical building blocks of future worlds."
+    },
+    {
+      "id": "outer-shell",
+      "label": "Outer Diffuse Shell",
+      "x": 0.84,
+      "y": 0.47,
+      "description": "The faint, diffuse outer glow represents the earliest mass-loss episodes — gas expelled tens of thousands of years ago, now cooled and spread across more than a light-year of space. At the nebula's current expansion speed of 9 km/s, the outermost wisps have been traveling outward for roughly 50,000 years. Webb's infrared sensitivity reveals cool molecular gas and dust in this outer shell that optical telescopes completely miss — material that will eventually drift into the interstellar medium and become raw material for future stellar and planetary systems."
+    },
+    {
+      "id": "filaments",
+      "label": "Molecular Filaments",
+      "x": 0.25,
+      "y": 0.24,
+      "description": "These complex arcs and filaments record the binary companion's influence — as it orbits the dying star, it stirs the expelled gas into asymmetric patterns rather than perfect spherical shells. Each arc traces a different orbital position, a different wind pulse, a different moment in the thousands-of-years dance between the two stars. Webb's sensitivity to cool molecular gas exposed layers of structure that Hubble's optical camera couldn't see. Astronomers use these structures to reconstruct the binary's orbital history — reading the nebula like a logbook of the system's last millennia."
+    }
+  ],
+  "scaleTranslations": [
+    "The Southern Ring Nebula is about half a light-year across — the same distance light travels in 6 months. The outermost gas has been expanding at 9 km/s for roughly 50,000 years to reach that size.",
+    "The white dwarf at center is roughly the size of Earth but contains half the mass of our Sun — a teaspoon of its material would weigh about 5 tons on Earth's surface.",
+    "This nebula is 2,000 light-years away — the same light that shows you this dying star will reach civilizations on the other side of the galaxy long after our Sun has died the same death."
+  ],
   "nasaSource": "https://www.nasa.gov/image-article/nasas-webb-captures-dying-stars-final-performance/",
   "releaseDate": "2022-07-12"
 }
