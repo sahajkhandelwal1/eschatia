@@ -72,22 +72,31 @@ export default function HotspotOverlay({ viewer, hotspots }) {
       overlayEls.current.push(el);
     });
 
-    // OSD canvas-click fires reliably; check screen-space proximity (22px radius)
-    const handleCanvasClick = (event) => {
+    const nearHotspot = (pos) => {
       for (const hotspot of hotspots) {
         const pinPx = viewer.viewport.viewportToViewerElementCoordinates(
           new OpenSeadragon.Point(hotspot.x, hotspot.y)
         );
-        const dx = event.position.x - pinPx.x;
-        const dy = event.position.y - pinPx.y;
-        if (Math.sqrt(dx * dx + dy * dy) < 22) {
-          event.preventDefaultAction = true;
-          setActive(hotspot);
-          return;
-        }
+        const dx = pos.x - pinPx.x;
+        const dy = pos.y - pinPx.y;
+        if (Math.sqrt(dx * dx + dy * dy) < 22) return hotspot;
+      }
+      return null;
+    };
+
+    const handleCanvasMove = (event) => {
+      viewer.canvas.style.cursor = nearHotspot(event.position) ? 'pointer' : '';
+    };
+
+    const handleCanvasClick = (event) => {
+      const hit = nearHotspot(event.position);
+      if (hit) {
+        event.preventDefaultAction = true;
+        setActive(hit);
       }
     };
 
+    viewer.addHandler('canvas-move', handleCanvasMove);
     viewer.addHandler('canvas-click', handleCanvasClick);
 
     return () => {
@@ -95,6 +104,8 @@ export default function HotspotOverlay({ viewer, hotspots }) {
         try { viewer.removeOverlay(el); } catch (_) {}
       });
       overlayEls.current = [];
+      viewer.canvas.style.cursor = '';
+      viewer.removeHandler('canvas-move', handleCanvasMove);
       viewer.removeHandler('canvas-click', handleCanvasClick);
     };
   }, [viewer, hotspots]);
