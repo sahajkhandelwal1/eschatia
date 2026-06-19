@@ -1,13 +1,7 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
-const contentVariants = {
-  enter: { opacity: 0, y: 10 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.25, ease: 'easeOut' } },
-  exit: { opacity: 0, y: -8, transition: { duration: 0.15 } },
-};
-
-export default function NarrationPanel({ destination, activeHotspot, onClose }) {
+export default function NarrationPanel({ destination }) {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
@@ -29,67 +23,30 @@ export default function NarrationPanel({ destination, activeHotspot, onClose }) 
         </span>
       </button>
 
-      {/* Main panel content */}
       {!collapsed && (
         <div className="w-72 bg-space-950/90 backdrop-blur-sm border-l border-white/10 flex flex-col overflow-hidden">
-          <div className="flex-1 overflow-y-auto p-5">
-            <AnimatePresence mode="wait">
-              {activeHotspot ? (
-                <motion.div
-                  key="hotspot"
-                  variants={contentVariants}
-                  initial="enter"
-                  animate="visible"
-                  exit="exit"
-                  className="space-y-3"
-                >
-                  <p className="text-gold text-xs uppercase tracking-widest">{destination.name}</p>
-                  <h2 className="text-white text-base font-semibold leading-snug">
-                    {activeHotspot.label}
-                  </h2>
-                  <p className="text-white/70 text-sm leading-relaxed">
-                    {activeHotspot.description}
-                  </p>
-                  <button
-                    onClick={onClose}
-                    className="text-gold/70 text-xs uppercase tracking-widest hover:text-gold transition-colors mt-1"
-                  >
-                    ← Overview
-                  </button>
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="overview"
-                  variants={contentVariants}
-                  initial="enter"
-                  animate="visible"
-                  exit="exit"
-                  className="space-y-4"
-                >
-                  <p className="text-gold text-xs uppercase tracking-widest">
-                    {destination.name}
-                  </p>
-                  <p className="text-white/70 text-sm leading-relaxed">
-                    {destination.introduction}
-                  </p>
-                  {destination.hotspots?.length > 0 && (
-                    <div className="pt-1">
-                      <p className="text-white/35 text-xs uppercase tracking-widest mb-2">
-                        Points of Interest
-                      </p>
-                      <ul className="space-y-1">
-                        {destination.hotspots.map((hotspot) => (
-                          <li key={hotspot.id} className="text-white/55 text-xs flex items-center gap-2">
-                            <span className="text-gold/70">·</span>
-                            {hotspot.label}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </motion.div>
-              )}
-            </AnimatePresence>
+          <div className="flex-1 overflow-y-auto p-5 space-y-4">
+            <p className="text-gold text-xs uppercase tracking-widest">
+              {destination.name}
+            </p>
+            <p className="text-white/70 text-sm leading-relaxed">
+              {destination.introduction}
+            </p>
+            {destination.hotspots?.length > 0 && (
+              <div className="pt-1">
+                <p className="text-white/35 text-xs uppercase tracking-widest mb-2">
+                  Points of Interest
+                </p>
+                <ul className="space-y-1">
+                  {destination.hotspots.map((hotspot) => (
+                    <li key={hotspot.id} className="text-white/55 text-xs flex items-center gap-2">
+                      <span className="text-gold/70">·</span>
+                      {hotspot.label}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       )}

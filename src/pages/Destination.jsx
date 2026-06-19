@@ -5,7 +5,6 @@ import Viewer from '../components/Viewer';
 import NarrationPanel from '../components/NarrationPanel';
 import HotspotOverlay from '../components/HotspotOverlay';
 import ScaleSidebar from '../components/ScaleSidebar';
-import { useViewerState } from '../hooks/useViewerState';
 
 import carinaNebula from '../data/destinations/carina-nebula.json';
 import cartwheelGalaxy from '../data/destinations/cartwheel-galaxy.json';
@@ -35,7 +34,6 @@ export default function Destination() {
   const { id } = useParams();
   const destination = DESTINATIONS[id];
   const [viewer, setViewer] = useState(null);
-  const { activeHotspot, setActiveHotspot, clearHotspot } = useViewerState();
 
   if (!destination) {
     return (
@@ -65,14 +63,10 @@ export default function Destination() {
         />
       </div>
 
-      {/* Hotspot overlay — renders pulsing pins once viewer is ready */}
-      <HotspotOverlay
-        viewer={viewer}
-        hotspots={destination.hotspots}
-        onHotspotClick={setActiveHotspot}
-      />
+      {/* Hotspot pins + popup — self-contained, no viewer dependency */}
+      <HotspotOverlay hotspots={destination.hotspots} />
 
-      {/* Top bar — fades in after viewer settles */}
+      {/* Top bar */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -81,7 +75,7 @@ export default function Destination() {
       >
         <Link
           to="/"
-          className="text-white/60 hover:text-white transition-colors text-sm"
+          className="text-white/60 hover:text-white transition-colors"
           aria-label="Back to home"
         >
           <span className="italic font-light text-sm">ἐσχατιά</span>
@@ -92,14 +86,10 @@ export default function Destination() {
         </div>
       </motion.div>
 
-      {/* Narration panel — slides in from right */}
-      <NarrationPanel
-        destination={destination}
-        activeHotspot={activeHotspot}
-        onClose={clearHotspot}
-      />
+      {/* Narration panel — overview only */}
+      <NarrationPanel destination={destination} />
 
-      {/* Scale sidebar — slides up from bottom-left */}
+      {/* Scale sidebar */}
       <ScaleSidebar scaleTranslations={destination.scaleTranslations} />
     </motion.div>
   );
