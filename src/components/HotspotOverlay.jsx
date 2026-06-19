@@ -19,6 +19,7 @@ function injectStyles() {
       box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
       position: relative;
       transition: transform 0.15s ease;
+      pointer-events: auto;
     }
     .hotspot-pin:hover { transform: scale(1.3); }
     .hotspot-pin::before {
