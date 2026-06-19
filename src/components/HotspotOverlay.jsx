@@ -9,31 +9,45 @@ function injectStyles() {
   const style = document.createElement('style');
   style.id = STYLE_ID;
   style.textContent = `
+    /* Large transparent hit area — easy to tap/click */
     .hotspot-pin {
-      width: 14px;
-      height: 14px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: transparent;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      pointer-events: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* Visual gold dot in the center */
+    .hotspot-dot {
+      width: 12px;
+      height: 12px;
       border-radius: 50%;
       background: rgba(212, 175, 55, 0.9);
       border: 2px solid #d4af37;
-      cursor: pointer;
       box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
       position: relative;
       transition: transform 0.15s ease;
-      pointer-events: auto;
+      flex-shrink: 0;
     }
-    .hotspot-pin:hover { transform: scale(1.3); }
-    .hotspot-pin::before {
+    .hotspot-pin:hover .hotspot-dot { transform: scale(1.4); }
+    .hotspot-dot::before {
       content: '';
       position: absolute;
-      inset: -5px;
+      inset: -6px;
       border-radius: 50%;
       border: 2px solid rgba(212, 175, 55, 0.45);
       animation: hpin-pulse 2s ease-out infinite;
     }
-    .hotspot-pin::after {
+    .hotspot-dot::after {
       content: '';
       position: absolute;
-      inset: -11px;
+      inset: -13px;
       border-radius: 50%;
       border: 1px solid rgba(212, 175, 55, 0.2);
       animation: hpin-pulse 2s ease-out infinite 0.65s;
@@ -63,6 +77,9 @@ export default function HotspotOverlay({ viewer, hotspots }) {
       const el = document.createElement('button');
       el.className = 'hotspot-pin';
       el.setAttribute('aria-label', hotspot.label);
+      const dot = document.createElement('div');
+      dot.className = 'hotspot-dot';
+      el.appendChild(dot);
       el.addEventListener('click', (e) => {
         e.stopPropagation();
         setActive(hotspot);

@@ -29,6 +29,10 @@ export default function Viewer({ imageUrl, tileSource, onViewerReady }) {
       // Smooth pan/zoom feel
       animationTime: 0.5,
       showNavigationControl: false,
+      // Disable click-to-zoom so missed hotspot clicks don't zoom in
+      gestureSettingsMouse: { clickToZoom: false },
+      gestureSettingsTouch: { clickToZoom: false },
+      gestureSettingsPen: { clickToZoom: false },
     });
     viewerRef.current = viewer;
 
