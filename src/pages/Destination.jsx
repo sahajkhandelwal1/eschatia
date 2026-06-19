@@ -63,8 +63,8 @@ export default function Destination() {
         />
       </div>
 
-      {/* Hotspot pins + popup — self-contained, no viewer dependency */}
-      <HotspotOverlay hotspots={destination.hotspots} />
+      {/* Hotspot pins anchored to image coords via OSD overlay; popup is React-managed */}
+      <HotspotOverlay viewer={viewer} hotspots={destination.hotspots} />
 
       {/* Top bar */}
       <motion.div
