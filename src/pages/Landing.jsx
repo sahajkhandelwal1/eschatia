@@ -1,9 +1,10 @@
-import { useState, useRef, useCallback } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import Starfield from '../components/Starfield';
 import HorizonHero from '../components/HorizonHero';
 import DestinationCard from '../components/DestinationCard';
+import CinematicOverlay from '../components/CinematicOverlay';
+import { useCinematicTransition } from '../hooks/useCinematicTransition';
 import pillars from '../data/destinations/pillars-of-creation.json';
 import smacs from '../data/destinations/smacs-0723.json';
 import carina from '../data/destinations/carina-nebula.json';
@@ -17,30 +18,7 @@ const STATS = [
 ];
 
 export default function Landing() {
-  const navigate = useNavigate();
-  const [transition, setTransition] = useState(null); // { id, rect, image }
-  const [blackOverlay, setBlackOverlay] = useState(false);
-  const cardRefs = useRef({});
-
-  const handleEnter = useCallback((id) => {
-    const cardEl = cardRefs.current[id];
-    if (!cardEl) {
-      navigate(`/destination/${id}`);
-      return;
-    }
-
-    const rect = cardEl.getBoundingClientRect();
-    const dest = FEATURED.find((d) => d.id === id);
-
-    // Kick off the expansion animation
-    setTransition({ id, rect, image: dest?.image });
-
-    // After card expands (600ms) + tiny buffer, fade to black (200ms)
-    setTimeout(() => setBlackOverlay(true), 620);
-
-    // Navigate after expansion + black fade
-    setTimeout(() => navigate(`/destination/${id}`), 900);
-  }, [navigate]);
+  const { cardRefs, transition, blackOverlay, handleEnter } = useCinematicTransition();
 
   return (
     <div className="relative min-h-screen bg-space-950 text-white overflow-x-hidden">
@@ -111,7 +89,7 @@ export default function Landing() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
             >
-              <DestinationCard destination={dest} onEnter={handleEnter} />
+              <DestinationCard destination={dest} onEnter={(id) => handleEnter(id, dest.image)} />
             </motion.div>
           ))}
         </div>
@@ -143,70 +121,7 @@ export default function Landing() {
         </p>
       </footer>
 
-      {/* === Cinematic Transition Layer === */}
-      <AnimatePresence>
-        {transition && (
-          <>
-            {/* Expanding card clone */}
-            <motion.div
-              key="expanding-card"
-              initial={{
-                position: 'fixed',
-                top: transition.rect.top,
-                left: transition.rect.left,
-                width: transition.rect.width,
-                height: transition.rect.height,
-                borderRadius: 8,
-                zIndex: 9998,
-                overflow: 'hidden',
-              }}
-              animate={{
-                top: 0,
-                left: 0,
-                width: '100vw',
-                height: '100vh',
-                borderRadius: 0,
-              }}
-              transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
-              style={{ position: 'fixed' }}
-            >
-              <img
-                src={transition.image}
-                alt=""
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  objectPosition: 'center',
-                }}
-              />
-              {/* Keep the gradient overlay so the card looks authentic while expanding */}
-              <div
-                style={{
-                  position: 'absolute',
-                  inset: 0,
-                  background: 'linear-gradient(to top, rgba(4,4,8,0.95) 0%, rgba(4,4,8,0.3) 40%, transparent 100%)',
-                }}
-              />
-            </motion.div>
-
-            {/* Black fade-to-black overlay */}
-            <motion.div
-              key="black-overlay"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: blackOverlay ? 1 : 0 }}
-              transition={{ duration: 0.2 }}
-              style={{
-                position: 'fixed',
-                inset: 0,
-                background: '#000',
-                zIndex: 9999,
-                pointerEvents: 'none',
-              }}
-            />
-          </>
-        )}
-      </AnimatePresence>
+      <CinematicOverlay transition={transition} blackOverlay={blackOverlay} />
     </div>
   );
 }

@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Starfield from '../components/Starfield';
 import DestinationCard from '../components/DestinationCard';
+import CinematicOverlay from '../components/CinematicOverlay';
+import { useCinematicTransition } from '../hooks/useCinematicTransition';
 
 import carinaNebula from '../data/destinations/carina-nebula.json';
 import cartwheelGalaxy from '../data/destinations/cartwheel-galaxy.json';
@@ -37,6 +39,8 @@ const fadeUp = {
 };
 
 export default function Explore() {
+  const { cardRefs, transition, blackOverlay, handleEnter } = useCinematicTransition();
+
   return (
     <div className="relative min-h-screen bg-space-950 text-white overflow-x-hidden">
       <Starfield />
@@ -78,12 +82,13 @@ export default function Explore() {
           {ALL_DESTINATIONS.map((dest, i) => (
             <motion.div
               key={dest.id}
+              ref={(el) => { if (el) cardRefs.current[dest.id] = el; }}
               custom={i}
               variants={fadeUp}
               initial="hidden"
               animate="visible"
             >
-              <DestinationCard destination={dest} />
+              <DestinationCard destination={dest} onEnter={(id) => handleEnter(id, dest.image)} />
             </motion.div>
           ))}
         </div>
@@ -94,6 +99,8 @@ export default function Explore() {
           Image credit: NASA, ESA, CSA, STScI · Data via MAST / jwstapi.com
         </p>
       </footer>
+
+      <CinematicOverlay transition={transition} blackOverlay={blackOverlay} />
     </div>
   );
 }
