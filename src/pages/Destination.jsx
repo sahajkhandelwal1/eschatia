@@ -1,9 +1,11 @@
-// Full-screen viewer page for a specific destination — /destination/:id
-import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import Viewer from '../components/Viewer';
 import NarrationPanel from '../components/NarrationPanel';
+import HotspotOverlay from '../components/HotspotOverlay';
+import ScaleSidebar from '../components/ScaleSidebar';
+import { useViewerState } from '../hooks/useViewerState';
 
 import carinaNebula from '../data/destinations/carina-nebula.json';
 import cartwheelGalaxy from '../data/destinations/cartwheel-galaxy.json';
@@ -33,7 +35,7 @@ export default function Destination() {
   const { id } = useParams();
   const destination = DESTINATIONS[id];
   const [viewer, setViewer] = useState(null);
-  const [activeHotspot, setActiveHotspot] = useState(null);
+  const { activeHotspot, setActiveHotspot, clearHotspot } = useViewerState();
 
   if (!destination) {
     return (
@@ -47,8 +49,6 @@ export default function Destination() {
   }
 
   return (
-    // Viewer fades in from black: starts opacity 0, fades to 1 over 400ms with 100ms delay.
-    // This syncs with the black overlay from Landing.jsx fading out after navigation.
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -58,8 +58,19 @@ export default function Destination() {
     >
       {/* Full-screen viewer */}
       <div className="absolute inset-0">
-        <Viewer imageUrl={destination.image} tileSource={destination.tileSource || null} onViewerReady={setViewer} />
+        <Viewer
+          imageUrl={destination.image}
+          tileSource={destination.tileSource || null}
+          onViewerReady={setViewer}
+        />
       </div>
+
+      {/* Hotspot overlay — renders pulsing pins once viewer is ready */}
+      <HotspotOverlay
+        viewer={viewer}
+        hotspots={destination.hotspots}
+        onHotspotClick={setActiveHotspot}
+      />
 
       {/* Top bar — fades in after viewer settles */}
       <motion.div
@@ -81,12 +92,15 @@ export default function Destination() {
         </div>
       </motion.div>
 
-      {/* NarrationPanel animates in with its own 0.6s delay (set in NarrationPanel.jsx) */}
+      {/* Narration panel — slides in from right */}
       <NarrationPanel
         destination={destination}
         activeHotspot={activeHotspot}
-        onClose={() => setActiveHotspot(null)}
+        onClose={clearHotspot}
       />
+
+      {/* Scale sidebar — slides up from bottom-left */}
+      <ScaleSidebar scaleTranslations={destination.scaleTranslations} />
     </motion.div>
   );
 }

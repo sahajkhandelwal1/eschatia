@@ -123,12 +123,12 @@ export default function Landing() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <a
-            href="/explore"
+          <Link
+            to="/explore"
             className="text-white/40 text-sm uppercase tracking-widest hover:text-gold transition-colors"
           >
             See all 10 destinations →
-          </a>
+          </Link>
         </motion.div>
       </section>
 
