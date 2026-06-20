@@ -1,7 +1,5 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
 import { useEffect } from 'react';
-import { PageTransitionProvider } from './context/PageTransition';
 import Landing from './pages/Landing';
 import Explore from './pages/Explore';
 import Destination from './pages/Destination';
@@ -14,28 +12,17 @@ function ScrollToTop() {
   return null;
 }
 
-function AppRoutes() {
-  const location = useLocation();
+export default function App() {
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/destination/:id" element={<Destination />} />
         <Route path="/discoveries" element={<Discoveries />} />
         <Route path="/about" element={<About />} />
       </Routes>
-    </AnimatePresence>
-  );
-}
-
-export default function App() {
-  return (
-    <BrowserRouter>
-      <PageTransitionProvider>
-        <ScrollToTop />
-        <AppRoutes />
-      </PageTransitionProvider>
     </BrowserRouter>
   );
 }

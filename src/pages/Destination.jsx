@@ -1,7 +1,8 @@
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
+// motion only used for top bar fade-in now
 import { useState } from 'react';
-import { usePageTransition } from '../context/PageTransition';
+
 import Viewer from '../components/Viewer';
 import NarrationPanel from '../components/NarrationPanel';
 import HotspotOverlay from '../components/HotspotOverlay';
@@ -37,21 +38,18 @@ export default function Destination() {
   const location = useLocation();
   const destination = DESTINATIONS[id];
   const [viewer, setViewer] = useState(null);
-  const { triggerFade } = usePageTransition();
 
   const backPath = location.state?.from || '/';
   const backLabel = backPath === '/explore' ? 'All destinations' : 'Home';
 
-  const handleBack = (to) => {
-    triggerFade(() => navigate(to ?? backPath));
-  };
+  const handleBack = (to) => navigate(to ?? backPath);
 
   if (!destination) {
     return (
       <div className="flex flex-col items-center justify-center h-screen bg-space-950 text-white gap-4">
         <p className="text-white/60 text-lg">Destination not found.</p>
         <button
-          onClick={() => triggerFade(() => navigate('/'))}
+          onClick={() => navigate('/')}
           className="text-gold text-sm uppercase tracking-widest hover:text-white transition-colors"
         >
           ← Back to Home
@@ -61,13 +59,7 @@ export default function Destination() {
   }
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.4, delay: 0.1, ease: 'easeOut' }}
-      className="relative w-full h-screen overflow-hidden bg-space-950"
-    >
+    <div className="relative w-full h-screen overflow-hidden bg-space-950">
       {/* Full-screen viewer */}
       <div className="absolute inset-0">
         <Viewer
@@ -113,6 +105,6 @@ export default function Destination() {
 
       <NarrationPanel destination={destination} />
       <ScaleSidebar scaleTranslations={destination.scaleTranslations} />
-    </motion.div>
+    </div>
   );
 }
