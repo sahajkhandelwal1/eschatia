@@ -104,9 +104,10 @@ export default function HotspotOverlay({ viewer, hotspots }) {
         try { viewer.removeOverlay(el); } catch (_) {}
       });
       overlayEls.current = [];
-      viewer.canvas.style.cursor = '';
-      viewer.removeHandler('canvas-move', handleCanvasMove);
-      viewer.removeHandler('canvas-click', handleCanvasClick);
+      // viewer.canvas is set to null by OSD's destroy() — guard all accesses
+      try { if (viewer.canvas) viewer.canvas.style.cursor = ''; } catch (_) {}
+      try { viewer.removeHandler('canvas-move', handleCanvasMove); } catch (_) {}
+      try { viewer.removeHandler('canvas-click', handleCanvasClick); } catch (_) {}
     };
   }, [viewer, hotspots]);
 

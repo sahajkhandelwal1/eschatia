@@ -1,6 +1,6 @@
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-// motion only used for top bar fade-in now
 import { useState } from 'react';
 
 import Viewer from '../components/Viewer';
@@ -35,25 +35,21 @@ const DESTINATIONS = {
 export default function Destination() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const location = useLocation();
   const destination = DESTINATIONS[id];
   const [viewer, setViewer] = useState(null);
 
-  const backPath = location.state?.from || '/';
-  const backLabel = backPath === '/explore' ? 'All destinations' : 'Home';
-
-  const handleBack = (to) => navigate(to ?? backPath);
+  const navTo = (path) => navigate(path);
 
   if (!destination) {
     return (
       <div className="flex flex-col items-center justify-center h-screen bg-space-950 text-white gap-4">
         <p className="text-white/60 text-lg">Destination not found.</p>
-        <button
-          onClick={() => navigate('/')}
+        <Link
+          to="/"
           className="text-gold text-sm uppercase tracking-widest hover:text-white transition-colors"
         >
           ← Back to Home
-        </button>
+        </Link>
       </div>
     );
   }
@@ -78,13 +74,13 @@ export default function Destination() {
         transition={{ duration: 0.4, delay: 0.6 }}
         className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-5 py-4 bg-gradient-to-b from-space-950/80 to-transparent"
       >
-        {/* Back button — goes to where the user came from */}
+        {/* Back button — always goes to explore */}
         <button
-          onClick={() => handleBack()}
+          onClick={() => navTo('/explore')}
           className="flex items-center gap-2 text-white/60 hover:text-white transition-colors group"
         >
           <span className="text-sm group-hover:-translate-x-0.5 transition-transform">←</span>
-          <span className="text-xs uppercase tracking-widest">{backLabel}</span>
+          <span className="text-xs uppercase tracking-widest">All destinations</span>
         </button>
 
         {/* Destination name + distance */}
@@ -95,7 +91,7 @@ export default function Destination() {
 
         {/* ἐσχατιά — always goes home */}
         <button
-          onClick={() => handleBack('/')}
+          onClick={() => navTo('/')}
           className="text-white/60 hover:text-gold transition-colors"
           aria-label="Home"
         >
