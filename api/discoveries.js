@@ -1,41 +1,40 @@
-// Vercel edge function proxy — forwards requests to jwstapi.com with API key,
-// response cached at the edge for 1 hour
-export const config = { runtime: 'edge' };
+// Serverless proxy — fetches latest JWST JPG releases, filters to science images,
+// and enriches with human-readable metadata. Cached 1hr at edge.
+export default async function handler(req, res) {
+  const count = parseInt(req.query?.count ?? '40', 10);
 
-export default async function handler(req) {
-  const url = new URL(req.url);
-  const limit = url.searchParams.get('limit');
+  const key = process.env.JWST_API_KEY ?? '';
+  if (!key) {
+    return res.status(500).json({ error: 'missing JWST_API_KEY' });
+  }
 
-  const upstreamUrl = new URL('https://api.jwstapi.com/all/latest');
-  if (limit) upstreamUrl.searchParams.set('limit', limit);
+  res.setHeader('Cache-Control', 'public, s-maxage=3600');
 
   let upstreamRes;
   try {
-    upstreamRes = await fetch(upstreamUrl.toString(), {
-      headers: {
-        'X-API-KEY': process.env.JWST_API_KEY ?? '',
-      },
+    upstreamRes = await fetch('https://api.jwstapi.com/all/type/jpg', {
+      headers: { 'X-API-KEY': key },
     });
-  } catch {
-    return new Response(JSON.stringify({ error: 'upstream failed' }), {
-      status: 502,
-      headers: { 'Content-Type': 'application/json' },
-    });
+  } catch (e) {
+    return res.status(502).json({ error: 'upstream failed', detail: String(e) });
   }
 
   if (!upstreamRes.ok) {
-    return new Response(JSON.stringify({ error: 'upstream failed' }), {
-      status: 502,
-      headers: { 'Content-Type': 'application/json' },
-    });
+    return res.status(502).json({ error: 'upstream failed', status: upstreamRes.status });
   }
 
-  const data = await upstreamRes.text();
+  const envelope = await upstreamRes.json();
+  const all = Array.isArray(envelope.body) ? envelope.body : [];
 
-  return new Response(data, {
-    headers: {
-      'Content-Type': 'application/json',
-      'Cache-Control': 'public, s-maxage=3600',
-    },
+  // Filter out calibration frames (darks, rates, backgrounds) — keep science images
+  const EXCLUDED_SUFFIXES = ['_dark', '_rate', '_bkg', '_flat', '_wht', '_asn'];
+  const science = all.filter(item => {
+    const suffix = item.details?.suffix ?? '';
+    return !EXCLUDED_SUFFIXES.some(s => suffix.includes(s));
   });
+
+  // Take most recent N, newest first
+  const recent = science.slice(-count).reverse();
+
+  return res.status(200).json(recent);
 }
