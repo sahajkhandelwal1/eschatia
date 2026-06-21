@@ -11,9 +11,42 @@
     "height": 3136,
     "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/potm2208b/"
   },
-  "introduction": "",
-  "hotspots": [],
-  "scaleTranslations": [],
+  "introduction": "You're looking at the Phantom Galaxy — M74 — a spiral galaxy 32 million light-years away, and one of the most perfectly face-on spirals ever observed. We see it from directly above, as though peering down into a slow-motion cosmic whirlpool, each arm a river of gas, dust, and newborn stars sweeping outward from a glowing central core. Webb's infrared vision cuts through the dust that hid so much from earlier telescopes, revealing individual star clusters and glowing clouds of hydrogen so clearly that what once looked like a smear to Hubble is now a detailed portrait of a living galaxy. Explore the hotspots to discover where new stars are being born, where ancient ones have settled, and what the dark lanes threading through those arms are quietly hiding.",
+  "hotspots": [
+    {
+      "id": "central-nucleus",
+      "label": "Central Nucleus",
+      "x": 0.5,
+      "y": 0.5,
+      "description": "The warm amber glow at the galaxy's heart is a dense, tightly packed bulge of older stars — billions of them crowded into a region far smaller than the galaxy's full extent. Unlike the arms, where star formation is still active, most stars here formed long ago and have settled into a slow, steady burn. Webb's infrared sensors reveal this core with unusual clarity because older stars radiate strongly in infrared. What kind of object might lurk at the very center, unseen, holding this entire spiral together?"
+    },
+    {
+      "id": "spiral-arm-hii",
+      "label": "Star-Forming Knots",
+      "x": 0.72,
+      "y": 0.35,
+      "description": "Those vivid pink and red knots tracing the spiral arms are HII regions — clouds of hydrogen gas so energized by the ultraviolet light of nearby newborn stars that they glow. Each knot is a stellar nursery, producing stars that will themselves eventually heat the gas around the next generation. Webb resolved dozens of these individual regions that Hubble could only blur into a smear of color. How many solar systems might be assembling inside just one of these glowing clusters right now?"
+    },
+    {
+      "id": "dust-lane",
+      "label": "Dark Dust Lane",
+      "x": 0.3,
+      "y": 0.55,
+      "description": "The dark threads weaving between the glowing arm structures are lanes of cold interstellar dust — the raw material future stars and planets will be built from. In visible light, these lanes are nearly opaque; in infrared, Webb can partially see through them, tracing the galaxy's hidden skeleton. The same dust that blocks our view also acts as a gravitational scaffold, funneling gas toward denser pockets where gravity can eventually collapse it into new stars. Darkness here is not emptiness — it is the universe in waiting."
+    },
+    {
+      "id": "outer-disk",
+      "label": "Outer Stellar Disk",
+      "x": 0.18,
+      "y": 0.38,
+      "description": "As your eye moves outward from the bright core and active arms, the galaxy fades into a diffuse, bluish haze — the outer disk, populated by older and lower-mass stars that formed long before the current wave of star formation began. This region is far less crowded and far quieter than the inner arms, a kind of galactic outskirts where the density of matter drops off steeply. The sheer scale is difficult to absorb: this faint outer glow spans tens of thousands of light-years, and yet from Earth it fits within a single eyepiece. What would our night sky look like if we lived out here, on the galaxy's edge?"
+    }
+  ],
+  "scaleTranslations": [
+    "The Phantom Galaxy is roughly 95,000 light-years across — about the same diameter as our own Milky Way. If you could drive across it at highway speed, the trip would take longer than the current age of the universe.",
+    "Each of those pink star-forming knots in the spiral arms is typically tens to hundreds of light-years wide — a region that would swallow hundreds of solar systems side by side, all in the process of being born simultaneously.",
+    "The light captured in this image left M74 32 million years ago, when our ancestors were small primates walking African forests. The galaxy you're looking at is a snapshot of a universe that had no idea humans would one day build a telescope to photograph it."
+  ],
   "nasaSource": "https://www.nasa.gov/image-article/phantom-galaxy-across-the-spectrum/",
   "releaseDate": "2022-08-29"
 }

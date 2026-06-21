@@ -11,9 +11,42 @@
     "height": 4134,
     "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2214d/"
   },
-  "introduction": "",
-  "hotspots": [],
-  "scaleTranslations": [],
+  "introduction": "You're looking at Neptune — our solar system's outermost planet, nearly 4.5 billion kilometers away — in finer detail than anything seen since Voyager 2 flew past in 1989. Webb's infrared cameras have done something remarkable: made Neptune's rings visible again after more than three decades of near-invisibility, revealing delicate arcs of ice and dust that are normally far too faint to photograph from Earth. The planet itself glows an eerie blue-white in infrared light, capped by a brilliant polar vortex, while the dazzling point blazing at the top of the frame is Triton — a moon so cold it outshines the planet it orbits. Explore the hotspots below to understand what you're seeing in this once-in-a-generation view of the outer solar system.",
+  "hotspots": [
+    {
+      "id": "planet-body",
+      "label": "Neptune",
+      "x": 0.5,
+      "y": 0.55,
+      "description": "Neptune appears blue-white here because methane gas in its atmosphere absorbs red and infrared light, reflecting only the cooler blue wavelengths back — even in Webb's infrared view, that methane signature is unmistakable. The planet is roughly four times the diameter of Earth and composed almost entirely of water, methane, and ammonia ices wrapped around a rocky core, which is why astronomers call it an ice giant rather than a gas giant. Winds on Neptune are the fastest in the solar system, reaching 1,200 miles per hour. What does it tell us about our own planet that conditions this extreme exist less than five light-hours from home?"
+    },
+    {
+      "id": "triton-moon",
+      "label": "Triton",
+      "x": 0.78,
+      "y": 0.15,
+      "description": "That intensely bright point blazing at the upper right isn't a star — it's Triton, Neptune's largest moon, and it outshines the planet itself because it's coated in frozen nitrogen that reflects roughly 70% of all sunlight that reaches it. At -235 degrees Celsius, Triton is one of the coldest objects in the solar system. Stranger still, it orbits Neptune backwards compared to the planet's rotation — a retrograde orbit that suggests Triton was captured from the Kuiper Belt rather than formed alongside Neptune. How does it feel to look at an object this cold and still call it part of our neighborhood?"
+    },
+    {
+      "id": "adams-ring",
+      "label": "Adams Ring",
+      "x": 0.22,
+      "y": 0.42,
+      "description": "The thin, sharply defined arc curving to the left of Neptune is the Adams ring — Neptune's outermost and most clearly defined ring, first detected by Voyager 2 in 1989 and not clearly photographed again until Webb captured this image in 2022. The ring is made of dust and rocky debris, and it contains several bright arcs that don't spread evenly around the orbit as you might expect — a mystery that took decades to partially explain through gravitational shepherding by a nearby moon. What makes something this delicate persist for billions of years in the chaos of the outer solar system?"
+    },
+    {
+      "id": "polar-vortex",
+      "label": "Polar Vortex Cap",
+      "x": 0.5,
+      "y": 0.3,
+      "description": "The bright region glowing at Neptune's north pole is a polar vortex cap — a concentration of high-altitude methane ice clouds and unusual atmospheric chemistry that makes this region substantially warmer than the rest of the planet. It's unusual because Neptune's poles receive almost no direct sunlight yet still produce this concentrated brightness. Webb captured this feature far more clearly than any previous instrument, revealing structure and brightness that hint at circulation patterns we still don't fully understand. How much of our own solar system remains genuinely unknown, even now?"
+    }
+  ],
+  "scaleTranslations": [
+    "Neptune is 4.4 billion kilometers from Earth — so far that light from the Sun takes over four hours to reach it, and a radio signal from Voyager 2 during its 1989 flyby took that same four hours to travel back to mission controllers waiting for results.",
+    "Triton is so cold at -235 degrees Celsius that it is only 38 degrees above absolute zero — the theoretical point at which all molecular motion stops. For comparison, the coldest temperature ever recorded on Earth's surface is a relatively balmy -89 degrees Celsius.",
+    "Neptune's rings are extraordinarily faint — they reflect so little light that from Earth, even the world's best ground-based telescopes struggle to detect them directly. Webb's infrared sensitivity made them visible in a way no observatory had managed in over three decades."
+  ],
   "nasaSource": "https://www.nasa.gov/image-article/webbs-first-image-of-neptune-rings/",
   "releaseDate": "2022-09-21"
 }

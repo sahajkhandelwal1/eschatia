@@ -11,9 +11,42 @@
     "height": 4312,
     "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2211a/"
   },
-  "introduction": "",
-  "hotspots": [],
-  "scaleTranslations": [],
+  "introduction": "You're looking at the aftermath of a cosmic collision 500 million light-years away — a smaller galaxy punched clean through the center of this one roughly 400 million years ago, and the shockwave is still rippling outward today. The result is the Cartwheel Galaxy: a bullseye of destruction and rebirth, with a blazing outer ring of newborn stars racing away from a calmer, older core. That brilliant blue-white halo you see is a starburst shockwave expanding at 250,000 miles per hour, lighting up as compressed gas triggers star formation on a staggering scale. Webb's infrared vision reveals the Cartwheel in unprecedented detail — explore the hotspots to trace the violence, the survivors, and the culprit still lurking nearby.",
+  "hotspots": [
+    {
+      "id": "outer-ring",
+      "label": "The Outer Ring",
+      "x": 0.5,
+      "y": 0.15,
+      "description": "This brilliant blue-white arc is the leading edge of a starburst shockwave — compressed gas and dust piling up as the collision's pressure wave travels outward at 250,000 miles per hour. Wherever that wave passes, it triggers the rapid birth of massive, hot, short-lived stars, which glow intensely blue before burning out in just a few million years. The ring has already swept across more than 150,000 light-years of space. What does it mean that the most violent event in this galaxy's history is also its most prolific nursery for new stars?"
+    },
+    {
+      "id": "inner-core",
+      "label": "The Inner Core",
+      "x": 0.5,
+      "y": 0.5,
+      "description": "The warm orange-yellow hub at the center is the surviving remnant of the original galaxy's core — older, cooler stars that endured the collision while younger material was flung outward. Webb's infrared eye reveals a knot of dust-shrouded activity here too, with ongoing star formation hidden beneath layers of gas that optical telescopes cannot penetrate. Between the core and the outer ring, the galaxy is remarkably empty — swept clean by the passage of the intruder. How much of this galaxy's original structure was lost forever in that single catastrophic moment?"
+    },
+    {
+      "id": "spoke-filament",
+      "label": "Spoke Filaments",
+      "x": 0.35,
+      "y": 0.38,
+      "description": "Thin spokes of gas and dust stretch between the inner core and the outer ring like spokes on a wheel, the feature that gave this galaxy its name. These filaments are channels of material caught between the inward pull of gravity and the outward momentum of the shockwave — a tug-of-war playing out across tens of thousands of light-years. Webb resolves knots and clumps along the spokes where star formation is just beginning. They are the structural memory of a galaxy that used to be something else entirely."
+    },
+    {
+      "id": "companion-galaxy",
+      "label": "Companion Galaxy",
+      "x": 0.82,
+      "y": 0.75,
+      "description": "This smaller galaxy to the lower right is one of two companions traveling alongside the Cartwheel — and one of them is the intruder believed responsible for the collision. Astronomers think a compact galaxy passed through the Cartwheel's center hundreds of millions of years ago and has since traveled far beyond the frame, while this companion remains close by. It appears largely undisturbed compared to the Cartwheel itself, a bystander to the chaos it may have helped set in motion. Does it seem strange that the perpetrator of such cosmic violence could emerge so unscathed?"
+    }
+  ],
+  "scaleTranslations": [
+    "The Cartwheel Galaxy's outer ring spans about 150,000 light-years in diameter — roughly the same width as our entire Milky Way galaxy, and the shockwave has already swept across that full distance in just 400 million years.",
+    "The outer ring is expanding at 250,000 miles per hour, which sounds extraordinary — yet at that speed, it would still take over 600 years just to travel the distance from our Sun to its nearest stellar neighbor, Proxima Centauri.",
+    "The light you're seeing left the Cartwheel Galaxy 500 million years ago — before complex animal life existed on Earth, before the first fish had crawled onto land, and before the continents had arranged themselves into anything resembling their current shapes."
+  ],
   "nasaSource": "https://www.nasa.gov/image-article/webb-captures-stellar-gymnastics-in-the-cartwheel-galaxy/",
   "releaseDate": "2022-08-02"
 }

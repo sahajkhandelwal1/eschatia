@@ -11,9 +11,42 @@
     "height": 4630,
     "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2209a/"
   },
-  "introduction": "",
-  "hotspots": [],
-  "scaleTranslations": [],
+  "introduction": "You're looking at the deepest infrared image of the universe ever taken at the time of its release — a patch of sky smaller than a grain of sand held at arm's length, yet packed with thousands of galaxies spanning billions of years of cosmic history. In the foreground sits galaxy cluster SMACS 0723, whose combined mass is so immense that it bends the very fabric of space, acting as a natural magnifying lens for everything behind it. The smeared arcs and stretched ribbons you see are not strange galaxies — they are distant background galaxies, their light warped and amplified by this gravitational lens across billions of light-years of travel. Explore the hotspots to find galaxies from the universe's infancy, light bent by invisible mass, and cosmic collisions caught mid-embrace.",
+  "hotspots": [
+    {
+      "id": "cluster-core",
+      "label": "Galaxy Cluster Core",
+      "x": 0.5,
+      "y": 0.5,
+      "description": "The bright, concentrated knot of yellowish elliptical galaxies near the center is the heart of SMACS 0723, a galaxy cluster roughly 4.6 billion light-years away. These galaxies are bound together by gravity and embedded in a vast cloud of superheated gas and dark matter that outweighs the visible stars by many times. It is this invisible mass — the dark matter halo — that acts as the gravitational lens warping and amplifying everything behind it. What does it say about the universe that its most powerful telescopes are the things we cannot even see?"
+    },
+    {
+      "id": "lensing-arc",
+      "label": "Gravitational Lensing Arc",
+      "x": 0.35,
+      "y": 0.62,
+      "description": "That elongated streak curving away from the cluster center is a single background galaxy whose light has been stretched and bent into an arc by the gravitational pull of SMACS 0723 lying between us. General relativity predicted this effect over a century ago: mass curves spacetime, and light follows that curve. Webb's resolution is sharp enough to detect faint structure inside these arcs — individual star-forming regions within galaxies billions of light-years away. You are seeing a galaxy that would be invisible without the cluster as a natural telescope."
+    },
+    {
+      "id": "distant-red-galaxy",
+      "label": "Ancient Red Galaxy",
+      "x": 0.15,
+      "y": 0.3,
+      "description": "The small, intensely red smudges near the image edges are among the most distant — and therefore oldest — objects ever imaged. Their light has been traveling for over 13 billion years, and cosmic expansion has stretched its wavelengths from visible light deep into the infrared, giving them their distinctive red cast. When this light departed, the universe was less than a billion years old — there were no planets, no heavy elements, no possibility of life. These faint red specks are the universe's baby pictures. Is it strange to think that this light has been crossing space since before our Sun existed?"
+    },
+    {
+      "id": "galaxy-merger",
+      "label": "Colliding Galaxies",
+      "x": 0.72,
+      "y": 0.4,
+      "description": "Some of the smeared or irregularly shaped galaxies scattered across this field are not strange lensing artifacts — they are galaxies in the process of merging. Galaxy collisions unfold over hundreds of millions of years, and what looks like a single distorted object here may be two entire galaxies passing through each other, their stars streaming into new formations while their black holes spiral inward. These violent encounters are actually one of the primary drivers of star formation in the universe. Every large, orderly galaxy you see today, including our own Milky Way, was almost certainly assembled through dozens of such collisions."
+    }
+  ],
+  "scaleTranslations": [
+    "The entire image covers a patch of sky smaller than a grain of sand held at arm's length — yet within it lie thousands of galaxies, each containing hundreds of billions of stars. The observable universe contains roughly two trillion galaxies total.",
+    "The farthest objects in this image emitted their light when the universe was less than 800 million years old — meaning their light has been traveling for over 13 billion years to reach Webb's mirror, crossing a distance so vast that the galaxies themselves have moved far from where they were when they sent it.",
+    "Galaxy cluster SMACS 0723 acts as a gravitational lens that magnifies background objects by up to a factor of several times — without it, the ancient galaxies behind it would be too faint for even Webb to detect. Nature built a telescope inside Webb's telescope."
+  ],
   "nasaSource": "https://www.nasa.gov/image-article/nasas-webb-delivers-deepest-infrared-image-of-universe-yet/",
   "releaseDate": "2022-07-11"
 }
