@@ -62,6 +62,35 @@ function getSuffix(item) {
   return Object.keys(SUFFIX_LABELS).find(s => suffix === s || suffix.endsWith(s)) ?? null;
 }
 
+function SkeletonCard({ index }) {
+  return (
+    <motion.div
+      variants={fadeUp}
+      initial="hidden"
+      animate="visible"
+      custom={0.1 + index * 0.05}
+      className="border border-white/10 rounded-lg overflow-hidden bg-white/[0.02]"
+    >
+      <div className="w-full aspect-video bg-white/[0.04] animate-pulse" />
+      <div className="p-5">
+        <div className="flex gap-2 mb-3">
+          <div className="h-4 w-16 rounded bg-white/[0.06] animate-pulse" />
+          <div className="h-4 w-24 rounded bg-white/[0.04] animate-pulse" />
+        </div>
+        <div className="space-y-2 mb-3">
+          <div className="h-3 w-full rounded bg-white/[0.04] animate-pulse" />
+          <div className="h-3 w-5/6 rounded bg-white/[0.04] animate-pulse" />
+          <div className="h-3 w-4/6 rounded bg-white/[0.04] animate-pulse" />
+        </div>
+        <div className="flex justify-between mt-3 pt-3 border-t border-white/10">
+          <div className="h-3 w-20 rounded bg-white/[0.04] animate-pulse" />
+          <div className="h-3 w-32 rounded bg-white/[0.04] animate-pulse" />
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
 function ObservationCard({ item, index }) {
   const instrument = parseInstrument(item.observation_id);
   const suffix = getSuffix(item);
@@ -202,17 +231,13 @@ export default function Discoveries() {
           </p>
         </motion.div>
 
-        {/* States */}
+        {/* Skeleton grid while loading */}
         {loading && (
-          <motion.p
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            custom={0.2}
-            className="text-white/40 text-sm uppercase tracking-widest"
-          >
-            Scanning the cosmos…
-          </motion.p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <SkeletonCard key={i} index={i} />
+            ))}
+          </div>
         )}
 
         {error && !loading && (
