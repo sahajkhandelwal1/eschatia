@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -10,7 +11,7 @@ const fadeUp = {
   }),
 };
 
-export default function HorizonHero() {
+export default function HorizonHero({ onRandom }) {
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen px-6 text-center">
       {/* Watermark */}
@@ -76,27 +77,44 @@ export default function HorizonHero() {
 
       {/* CTAs */}
       <motion.div
-        className="flex flex-col sm:flex-row gap-4"
+        className="flex flex-col items-center gap-4"
         variants={fadeUp}
         initial="hidden"
         animate="visible"
         custom={0.7}
       >
-        <Link
-          to="/explore"
-          className="px-8 py-3 bg-gold text-space-950 text-sm uppercase tracking-widest font-medium rounded hover:bg-gold-light transition-colors duration-200"
-        >
-          Begin the journey
-        </Link>
-        <Link
-          to="/about"
-          className="px-8 py-3 border border-white/20 text-white/70 text-sm uppercase tracking-widest font-medium rounded hover:border-white/40 hover:text-white transition-colors duration-200"
-        >
-          What is this?
-        </Link>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <Link
+            to="/explore"
+            className="px-8 py-3 bg-gold text-space-950 text-sm uppercase tracking-widest font-medium rounded hover:bg-gold-light transition-colors duration-200"
+          >
+            Begin the journey
+          </Link>
+          <Link
+            to="/about"
+            className="px-8 py-3 border border-white/20 text-white/70 text-sm uppercase tracking-widest font-medium rounded hover:border-white/40 hover:text-white transition-colors duration-200"
+          >
+            What is this?
+          </Link>
+        </div>
+
+        {onRandom && (
+          <button
+            onClick={onRandom}
+            className="group flex items-center gap-2 text-white/35 text-xs uppercase tracking-widest hover:text-gold transition-colors duration-300 mt-1"
+          >
+            <span
+              className="inline-block transition-transform duration-500 group-hover:rotate-180"
+              aria-hidden="true"
+            >
+              ✦
+            </span>
+            Take me anywhere
+          </button>
+        )}
       </motion.div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — placeholder line kept for layout */}
       <motion.div
         className="absolute bottom-8 flex flex-col items-center gap-2 text-white/30"
         variants={fadeUp}
@@ -110,3 +128,7 @@ export default function HorizonHero() {
     </section>
   );
 }
+
+HorizonHero.propTypes = {
+  onRandom: PropTypes.func,
+};

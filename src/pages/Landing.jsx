@@ -44,6 +44,11 @@ const STATS = [
 export default function Landing() {
   const { cardRefs, transition, blackOverlay, handleEnter } = useCinematicTransition();
   const carouselRef = useRef(null);
+
+  const handleRandom = useCallback(() => {
+    const dest = ALL_DESTINATIONS[Math.floor(Math.random() * ALL_DESTINATIONS.length)];
+    handleEnter(dest.id, dest.image);
+  }, [handleEnter]);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
 
@@ -91,7 +96,7 @@ export default function Landing() {
       </nav>
 
       {/* Hero */}
-      <HorizonHero />
+      <HorizonHero onRandom={handleRandom} />
 
       {/* Stat strip */}
       <motion.div
