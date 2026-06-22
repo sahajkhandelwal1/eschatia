@@ -1,0 +1,52 @@
+{
+  "id": "ngc-346",
+  "name": "NGC 346",
+  "type": "Star cluster & nebula",
+  "distance": "200,000 light-years",
+  "constellation": "Tucana",
+  "image": "https://cdn.esawebb.org/archives/images/thumb700x/weic2303a.jpg",
+  "introduction": "You're looking at the most active star-forming region in one of our galaxy's nearest neighbors — the Small Magellanic Cloud, a dwarf galaxy orbiting the Milky Way 200,000 light-years away. NGC 346 is extraordinary not just for its frenetic star birth but for what it represents: a chemical environment far poorer in heavy elements than our own galaxy, making it a living laboratory for how stars formed in the early universe, when those elements had not yet been forged by previous stellar generations. Webb uncovered hundreds of protostars still wrapped in dusty cocoons that previous observatories could not see at all, and traced the sweeping filaments of gas funneling inward toward the central cluster like rivers draining into a cosmic sea. This is star formation at industrial scale, in a setting that echoes the universe's earliest epochs. Explore the hotspots to trace the arc from raw gas to blazing new suns.",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 9474,
+    "height": 4654,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2303a/"
+  },
+  "hotspots": [
+    {
+      "id": "central-young-cluster",
+      "label": "The Central Young Cluster",
+      "x": 0.5,
+      "y": 0.4,
+      "description": "At the heart of NGC 346 burns a cluster of young, hot, massive stars whose combined ultraviolet radiation has carved out a bubble in the surrounding gas and set the nebula ablaze with ionized hydrogen. These stars are only a few million years old — practically newborns — yet they are already governing the fate of everything around them, sculpting the cloud that birthed them and potentially triggering more star formation in the compressed shells at the bubble's edge. In a galaxy with fewer heavy elements than ours, these massive stars burn hotter and radiate more intensely than their Milky Way counterparts. Does the scarcity of heavy elements in this galaxy change what kinds of worlds might eventually form around these stars?"
+    },
+    {
+      "id": "protostellar-cocoons",
+      "label": "Dusty Protostellar Cocoons",
+      "x": 0.25,
+      "y": 0.6,
+      "description": "Webb revealed hundreds of point sources hidden within the darker regions of the nebula — protostars still embedded in the dusty cocoons from which they are accreting mass. At 200,000 light-years away, detecting individual protostars was impossible before Webb; now they appear as a hidden population scattered through the cloud like embers in ash. Many are surrounded by circumstellar disks that may one day form planetary systems. What would it mean for the nature of those planets if the dust they are forming from contains so much less silicon and iron than the dust that built Earth?"
+    },
+    {
+      "id": "infalling-gas-filament",
+      "label": "Infalling Gas Filament",
+      "x": 0.65,
+      "y": 0.25,
+      "description": "The sweeping arc of gas and dust curving toward the central cluster is a filament of raw material being drawn inward by gravity — actively fueling the ongoing star formation at the center. Webb's infrared imaging traced these filaments far more precisely than was previously possible, revealing that the star formation process in NGC 346 is being fed by a continuous infall of gas rather than a single initial collapse. This mode of accretion, sometimes called 'streamers,' has also been observed in star-forming regions in our own galaxy. Is gravity, patiently gathering gas across light-years, the true architect of every star?"
+    },
+    {
+      "id": "smc-background",
+      "label": "Small Magellanic Cloud Background",
+      "x": 0.15,
+      "y": 0.15,
+      "description": "The faint, diffuse glow in the outer regions of the image is the broader stellar population of the Small Magellanic Cloud — hundreds of millions of older stars whose light blurs into a soft haze at this scale. The SMC is tidally disrupted by its interaction with the Milky Way and its companion, the Large Magellanic Cloud, meaning its stellar distribution is irregular and stretched. This whole system — the SMC, LMC, and Milky Way — form a gravitational family slowly merging over billions of years. What will NGC 346's star-forming legacy look like when its stellar descendants eventually become part of a larger merged galaxy?"
+    }
+  ],
+  "scaleTranslations": [
+    "NGC 346 sits 200,000 light-years away in the Small Magellanic Cloud — so distant that the light you're observing left this nebula long before Homo sapiens first migrated out of Africa.",
+    "The central cluster illuminating this nebula contains stars dozens of times more massive than the Sun; each one outshines our star by a factor of hundreds of thousands and lives only a few million years before exploding.",
+    "Webb identified hundreds of individual protostars in NGC 346 that previous telescopes could not detect at all — at 200,000 light-years away, each protostar is roughly as luminous as our entire solar system seen from across a continent."
+  ],
+  "nasaSource": "https://www.nasa.gov/image-article/webb-reveals-never-before-seen-details-in-active-star-forming-region/",
+  "releaseDate": "2023-01-11"
+}

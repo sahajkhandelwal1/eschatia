@@ -1,0 +1,52 @@
+{
+  "id": "orion-nebula",
+  "name": "Orion Nebula",
+  "type": "Stellar nursery",
+  "distance": "1,344 light-years",
+  "constellation": "Orion",
+  "image": "https://cdn.esawebb.org/archives/images/thumb700x/weic2212b.jpg",
+  "introduction": "You're looking at the most studied patch of sky in all of astronomy — and Webb has made it new again. The Orion Nebula hangs 1,344 light-years away in the sword of Orion, the nearest large stellar nursery to Earth and visible to the naked eye as a faint smudge on clear nights. Here, the Orion Bar cuts diagonally across the scene: a dense ridge of gas and dust being simultaneously illuminated and destroyed by the fierce ultraviolet light of the Trapezium Cluster, a tight group of massive young stars blazing just beyond the frame. Webb resolved the nebula in stunning clarity, revealing individual protoplanetary disks — infant solar systems — silhouetted against the glowing gas, as well as dense globules being sculpted by radiation into comet-like shapes. This is the place where theories of planetary formation must answer to observation. Explore the hotspots to walk through a star-forming region that was making suns before our ancestors walked upright.",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 1397,
+    "height": 1059,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2212b/"
+  },
+  "hotspots": [
+    {
+      "id": "orion-bar",
+      "label": "The Orion Bar",
+      "x": 0.5,
+      "y": 0.5,
+      "description": "The diagonal ridge running across the center of the image is the Orion Bar — a photodissociation region where the interface between the hot ionized nebula and the cold molecular cloud behind it is being lit up by ultraviolet radiation from the Trapezium stars. This boundary glows because UV photons are breaking apart molecules and stripping electrons from atoms, releasing energy as light. The Bar is one of the most intensely studied objects in astrophysics precisely because it is nearby enough for Webb to resolve its structure down to individual filaments. How many generations of stars are being triggered to form in the dense gas just behind this glowing frontier?"
+    },
+    {
+      "id": "proplyds",
+      "label": "Protoplanetary Disks (Proplyds)",
+      "x": 0.65,
+      "y": 0.3,
+      "description": "The teardrop-shaped silhouettes visible near the illuminated edge of the Bar are proplyds — protoplanetary disks seen in silhouette against the bright background of the nebula. Each one is a young star surrounded by a disk of gas and dust that is being slowly photoevaporated away by the same UV radiation that makes the nebula glow. If the disk survives long enough, its material will clump into planetesimals and eventually planets; if the radiation strips the gas first, the planet-forming process is cut short. Dozens of these proplyds have been catalogued in the Orion Nebula alone. Are there Earth-like planets forming inside one of these silhouettes right now — or is the radiation preventing it?"
+    },
+    {
+      "id": "sculpted-globule",
+      "label": "Radiation-Sculpted Globule",
+      "x": 0.3,
+      "y": 0.65,
+      "description": "Isolated from the main ridge, dense knots of gas called globules resist the radiation that burns away everything around them, their high density making them stubborn holdouts against the UV onslaught. The radiation carves them into comet-like shapes — a bright ionized head pointing toward the Trapezium and a tail streaming away in the opposite direction. Some of these globules contain protostars already forming in their dense cores; others may never make it that far before the radiation wins. Every globule here is a race between gravity pulling inward and radiation pushing outward. Which force is winning in the one you're looking at?"
+    },
+    {
+      "id": "background-stars",
+      "label": "Young Stellar Population",
+      "x": 0.8,
+      "y": 0.75,
+      "description": "Scattered across the image are hundreds of young stars, many revealed by Webb for the first time — objects that were too deeply embedded in dust for Hubble to detect but glow clearly in the infrared. These stars range in age from a few thousand to a few million years old, and their spread across the nebula records a wave of star formation that has been moving through the cloud over time. Some of these stars will live for tens of billions of years; others, born massive, will burn through their fuel in a few million years and explode as supernovae that will seed the next generation. What percentage of these newly visible stars will eventually host planets capable of supporting life?"
+    }
+  ],
+  "scaleTranslations": [
+    "The Orion Bar spans roughly 2 light-years from end to end — a distance so large that light itself takes two years to cross it, yet it appears as a thin ridge in this image.",
+    "The protoplanetary disks visible here are roughly the size of our solar system — meaning each teardrop silhouette you can see is a potential planetary system in the earliest stages of assembly.",
+    "At 1,344 light-years away, the Orion Nebula is our cosmic backyard: if the Milky Way were shrunk to the size of North America, the Orion Nebula would be just two miles from Earth."
+  ],
+  "nasaSource": "https://www.nasa.gov/image-article/webb-captures-the-glory-of-the-orion-nebula/",
+  "releaseDate": "2022-09-12"
+}

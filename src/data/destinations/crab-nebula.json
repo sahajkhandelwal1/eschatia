@@ -1,0 +1,52 @@
+{
+  "id": "crab-nebula",
+  "name": "Crab Nebula",
+  "type": "Pulsar wind nebula",
+  "distance": "6,500 light-years",
+  "constellation": "Taurus",
+  "image": "https://cdn.esawebb.org/archives/images/thumb700x/weic2316a.jpg",
+  "introduction": "You're looking at the shattered remains of a star that exploded in 1054 AD — a supernova so bright that Chinese and Arab astronomers recorded it blazing in daylight for weeks. What you see now, nearly a thousand years later, is the Crab Nebula: a six-light-year-wide cloud of gas and magnetic fields still expanding outward at 1,500 kilometers per second. At its heart spins a pulsar — a dead stellar core the size of a city, rotating 30 times every second, blasting a relentless wind of charged particles into the surrounding wreckage. Webb's infrared vision has revealed the nebula's internal architecture with unprecedented sharpness, tracing the filamentary skeleton of the explosion alongside the ethereal glow of synchrotron radiation. Explore the hotspots to examine the engine driving all of this chaos and the ancient stellar debris still streaming outward.",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 12778,
+    "height": 11968,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2316a/"
+  },
+  "hotspots": [
+    {
+      "id": "central-pulsar-region",
+      "label": "The Pulsar Engine",
+      "x": 0.5,
+      "y": 0.5,
+      "description": "At the center of this nebula lies a pulsar — the collapsed core of the original star, compressed into a sphere roughly 20 kilometers across yet more massive than the Sun. It spins 30 times per second, generating a lighthouse beam of X-rays and a fierce wind of electrons and positrons that inflates the entire nebula from within. The glowing torus visible here is where that wind slams into surrounding gas and converts kinetic energy into light. What kind of physics must operate inside an object denser than an atomic nucleus, yet spinning faster than a kitchen blender?"
+    },
+    {
+      "id": "synchrotron-web",
+      "label": "Synchrotron Radiation Web",
+      "x": 0.35,
+      "y": 0.4,
+      "description": "The milky yellow-white filaments threading through the interior are not gas — they are synchrotron radiation, the glow produced when electrons accelerated to near light-speed spiral around intense magnetic field lines. Webb detected this emission in infrared with unprecedented resolution, resolving the fine structure of the magnetic web that the pulsar wind weaves throughout the nebula. This same process powers blazars and gamma-ray bursts across the universe. How strange that such violent physics produces light so delicate it threads through the wreckage like spun silk?"
+    },
+    {
+      "id": "outer-filamentary-shell",
+      "label": "Stellar Debris Filaments",
+      "x": 0.15,
+      "y": 0.25,
+      "description": "The reddish-brown lattice of filaments tracing the outer regions is the original star's ejected outer layers, now scattered across light-years of space. These structures contain silicon, sulfur, oxygen, and other heavy elements forged inside the star over millions of years, now dispersing into the interstellar medium where they will eventually seed new stars and planets. The filaments glow because they are still being ionized by ultraviolet and X-ray radiation from the central pulsar. Does it feel like destruction, or recycling?"
+    },
+    {
+      "id": "dusty-knot",
+      "label": "Dusty Knot Structures",
+      "x": 0.7,
+      "y": 0.65,
+      "description": "Scattered throughout the nebula are compact, knotted structures — denser pockets of dust and gas that have partially resisted the outward blast and the eroding pulsar radiation. Webb's infrared sensitivity revealed that dust is actively forming inside this supernova remnant, something theorists predicted but had never been observed in such detail. This dust formation may be one of the primary ways heavy elements are packaged and distributed through the galaxy for future planetary systems. Could debris from an explosion that lit human skies nearly a millennium ago one day become part of another world?"
+    }
+  ],
+  "scaleTranslations": [
+    "The Crab Nebula spans roughly 11 light-years across — if centered on our Sun, the expanding shell's outer edge would engulf nearly three times the distance to Proxima Centauri, our nearest stellar neighbor.",
+    "The pulsar at its center packs more mass than our Sun into a sphere about the size of Manhattan, spinning 30 times per second — faster than helicopter rotor blades.",
+    "The explosion was witnessed by humans in 1054 AD; that light traveled 6,500 years to reach Earth, meaning the star actually died while our ancestors were still in the Stone Age."
+  ],
+  "nasaSource": "https://www.nasa.gov/image-article/nasa-webb-images-iconic-crab-nebula/",
+  "releaseDate": "2023-10-30"
+}

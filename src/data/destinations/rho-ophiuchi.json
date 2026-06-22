@@ -1,0 +1,52 @@
+{
+  "id": "rho-ophiuchi",
+  "name": "Rho Ophiuchi Cloud Complex",
+  "type": "Star-forming region",
+  "distance": "390 light-years",
+  "constellation": "Ophiuchus",
+  "image": "https://cdn.esawebb.org/archives/images/thumb700x/weic2316b.jpg",
+  "introduction": "You're looking at the closest stellar nursery to Earth — so near that Webb can resolve individual newborn stars in the act of igniting for the first time. The Rho Ophiuchi Cloud Complex is only 390 light-years away, practically next door on cosmic scales, which is why this image is one of the most detailed portraits of star birth ever captured. Vivid jets of red and orange are streams of hydrogen gas blasted outward by baby stars still accreting mass from their surrounding disks. The black patches are not voids but dense molecular cores so thick with dust that no light escapes them — potential sites of future stars still forming. Webb released this image on its first anniversary, and it stands as a testament to what infrared eyes can reveal that visible light cannot. Explore the hotspots to meet the youngest suns in our cosmic neighborhood.",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 12778,
+    "height": 14424,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2316b/"
+  },
+  "hotspots": [
+    {
+      "id": "star-s1",
+      "label": "Young Star S1",
+      "x": 0.7,
+      "y": 0.15,
+      "description": "The brilliant yellow-white star near the top of the image is S1, one of the only stars in this region massive enough to carve out a visible cavity in the surrounding cloud through its intense radiation. Unlike the baby stars elsewhere in the image, S1 is already a fully formed adult, and its ultraviolet light is sculpting the dust and gas around it into a glowing reflection nebula. S1 is not part of the young cluster being born here — it is a more massive intruder illuminating the nursery from within. Does the presence of a mature star in a star-forming region disrupt the birth of its smaller neighbors, or does it help trigger it?"
+    },
+    {
+      "id": "hydrogen-jet",
+      "label": "Herbig-Haro Jet",
+      "x": 0.35,
+      "y": 0.55,
+      "description": "The vivid red streaks cutting across the cloud are Herbig-Haro objects — jets of superheated hydrogen gas ejected at hundreds of kilometers per second by a newborn star still buried inside its dusty cocoon. These jets punch outward in opposite directions along the star's rotation axis, shockheating the surrounding gas to temperatures that make it glow brilliantly in infrared. The star driving this jet is so young it has not yet cleared a window for visible light to escape — Webb's infrared eyes are the only way to witness it. What would it look like to stand near the impact zone where this jet crashes into the surrounding cloud?"
+    },
+    {
+      "id": "dark-molecular-core",
+      "label": "Dark Molecular Core",
+      "x": 0.2,
+      "y": 0.7,
+      "description": "The dark, featureless patch here is not empty space — it is a dense molecular core, a region where gas and dust have accumulated so thickly that even infrared light cannot penetrate. These cores are the seeds from which stars form: gravity slowly draws the gas inward until the center grows hot and dense enough to ignite nuclear fusion. Some of these cores may contain protostars too deeply buried for even Webb to see directly. How many solar systems might be hiding inside a patch of darkness no larger than a thumbnail held at arm's length?"
+    },
+    {
+      "id": "protostellar-disk",
+      "label": "Protostellar Disk Candidate",
+      "x": 0.6,
+      "y": 0.75,
+      "description": "Webb identified roughly 50 young stellar objects in this cloud, many of them surrounded by protoplanetary disks — rotating flattened structures of gas and dust from which planets will eventually coalesce. At 390 light-years, these disks are close enough that future observatories may be able to resolve individual gaps and rings carved by nascent planets. The process you're looking at in this nearby cloud may closely mirror what happened around our own Sun 4.6 billion years ago. Is the disk you're examining right now perhaps building a world that will one day look back at us?"
+    }
+  ],
+  "scaleTranslations": [
+    "At 390 light-years, Rho Ophiuchi is so close that the light you are effectively looking at left this cloud around the year 1636 AD — during the Age of Exploration, when Galileo was still alive.",
+    "The hydrogen jets blasting from newborn stars in this image travel at roughly 400 kilometers per second — fast enough to cross the entire continental United States in about 11 seconds.",
+    "The dark molecular cores visible here contain enough gas and dust to form dozens of solar systems; each core is roughly the size of our entire solar system compressed into a clump dense enough to block starlight completely."
+  ],
+  "nasaSource": "https://www.nasa.gov/image-article/nasa-webb-telescope-captures-most-detailed-infrared-image-of-nearby-star-forming-region/",
+  "releaseDate": "2023-07-12"
+}

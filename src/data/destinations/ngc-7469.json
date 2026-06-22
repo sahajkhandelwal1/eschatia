@@ -1,0 +1,52 @@
+{
+  "id": "ngc-7469",
+  "name": "NGC 7469",
+  "type": "Active galaxy",
+  "distance": "220 million light-years",
+  "constellation": "Pegasus",
+  "image": "https://cdn.esawebb.org/archives/images/thumb700x/weic2211c.jpg",
+  "introduction": "You're looking at a galaxy with two engines running at once — a supermassive black hole consuming gas at its core, and a ring of furious star formation surrounding it like a halo of fire. NGC 7469 lies 220 million light-years away in Pegasus, and its active nucleus shines 100 times brighter than a normal galaxy's center, powered by matter spiraling into a black hole millions of times the mass of our Sun. Webb peeled back the dust that had hidden this system from Hubble, revealing a perfect starburst ring 1,500 light-years in radius that had never been seen in such detail. Nearby companion galaxy IC 5283 drifts at the edge of frame, connected by a faint bridge of stolen gas. Explore the hotspots to navigate a galaxy caught at the intersection of its most violent and most creative impulses.",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 4685,
+    "height": 5411,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2211c/"
+  },
+  "hotspots": [
+    {
+      "id": "active-nucleus",
+      "label": "Active Galactic Nucleus",
+      "x": 0.5,
+      "y": 0.5,
+      "description": "At the very center of NGC 7469 burns an active galactic nucleus — a supermassive black hole surrounded by an accretion disk of superheated gas spiraling inward at a fraction of the speed of light. The energy released by this process outshines the combined light of hundreds of billions of stars packed into a region smaller than our solar system. The nucleus is so energetic that it ionizes gas across the entire galaxy, fundamentally altering the chemistry of interstellar clouds thousands of light-years away. Is the black hole ultimately destroying the galaxy that feeds it, or is it sculpting something new?"
+    },
+    {
+      "id": "starburst-ring",
+      "label": "Starburst Ring",
+      "x": 0.5,
+      "y": 0.38,
+      "description": "Encircling the blazing nucleus is a ring of intense star formation roughly 1,500 light-years in radius — a structure Webb resolved for the first time in vivid detail after dust had hidden it from every previous observatory. The ring is studded with over a hundred compact, brilliant star clusters, each containing tens of thousands of newly born massive stars. The ring's origin is likely related to the same gravitational dynamics that are feeding the central black hole: gas funneled toward the center accumulates at a resonance orbit and collapses into stars before it can fall further. Are the black hole and the starburst ring working together, or competing for the same raw material?"
+    },
+    {
+      "id": "companion-galaxy",
+      "label": "Companion Galaxy IC 5283",
+      "x": 0.25,
+      "y": 0.35,
+      "description": "This smaller galaxy is IC 5283, a companion that has been slowly drawn toward NGC 7469 by mutual gravity and is now close enough that the two share a faint tidal bridge of gas and stars. IC 5283 will eventually be consumed by its more massive neighbor — a fate our own Milky Way shares with the Magellanic Clouds on a longer timescale. Webb's instruments detected molecular gas in the bridge connecting the two galaxies, the raw material being transferred from one galaxy to the other. In a billion years, will IC 5283 still exist as a distinct object, or will it have become part of the starburst ring?"
+    },
+    {
+      "id": "tidal-bridge",
+      "label": "Tidal Gas Bridge",
+      "x": 0.35,
+      "y": 0.42,
+      "description": "Between NGC 7469 and its companion IC 5283 stretches a faint bridge of gas and stars, drawn out by the gravitational tug-of-war between the two galaxies. This bridge is a one-way conveyor: gravity's arrow points from the smaller galaxy to the larger, meaning IC 5283 is slowly losing material to its massive neighbor. Tidal bridges like this one can persist for hundreds of millions of years, feeding both star formation and the central black hole in the dominant galaxy. Every molecule of gas in this bridge was once part of a separate galaxy — now it is in transit, becoming something else entirely."
+    }
+  ],
+  "scaleTranslations": [
+    "The starburst ring surrounding NGC 7469's nucleus has a radius of 1,500 light-years — large enough to contain the entire distance between our Sun and the nearest few hundred neighboring star systems.",
+    "The active nucleus of NGC 7469 releases more energy per second than our Sun will emit over its entire 10-billion-year lifetime — and it sustains this output continuously.",
+    "The light reaching us from NGC 7469 left when the most complex animals on Earth were early fish — 220 million years of travel through the void, just to reach your eyes today."
+  ],
+  "nasaSource": "https://www.nasa.gov/image-article/webb-images-hint-at-possible-signs-of-life-partner-in-distant-galaxy/",
+  "releaseDate": "2022-08-02"
+}

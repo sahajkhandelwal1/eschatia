@@ -1,0 +1,52 @@
+{
+  "id": "jupiter",
+  "name": "Jupiter",
+  "type": "Solar system giant",
+  "distance": "~628 million km at closest approach",
+  "constellation": "Solar system — visible across the zodiac",
+  "image": "https://cdn.esawebb.org/archives/images/thumb700x/weic2220a.jpg",
+  "introduction": "You're looking at our solar system's largest planet through eyes that can see heat and chemistry invisible to human sight — and the result is unlike any picture of Jupiter you have seen before. Webb captured this wide-field infrared view in 2022, revealing auroras blazing at both poles, a pale equatorial haze hovering in the upper atmosphere, and the ghostly diagonal streak of Jupiter's ring system caught in a rare viewing angle. Even the Great Red Spot — that centuries-old storm larger than Earth — appears luminous white here, because it reflects infrared light differently from the surrounding cloud bands. Two of Jupiter's smaller moons, Amalthea and Thebe, appear as tiny specks flanking the planet. This single image frames Jupiter's full disk plus its rings, something no Earth-based telescope could achieve with this clarity. Explore the hotspots to dive into the storms, rings, and atmospheric phenomena hiding in plain infrared sight.",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 9714,
+    "height": 3999,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2220a/"
+  },
+  "hotspots": [
+    {
+      "id": "great-red-spot",
+      "label": "The Great Red Spot",
+      "x": 0.35,
+      "y": 0.55,
+      "description": "The bright white oval dominating the southern hemisphere is the Great Red Spot — an anticyclonic storm that has persisted for at least 350 years and spans roughly 1.3 times the diameter of Earth. In visible light it is famously rust-red, but in infrared it appears white because the high, cold cloud tops of the storm reflect near-infrared light more efficiently than the warmer surrounding atmosphere. Wind speeds inside the storm exceed 500 kilometers per hour, and despite centuries of observation, scientists still debate why it has maintained coherence for so long. What does it mean for a storm to outlast every human civilization on record by centuries?"
+    },
+    {
+      "id": "north-polar-aurora",
+      "label": "North Polar Aurora",
+      "x": 0.5,
+      "y": 0.1,
+      "description": "The vivid glow capping the north pole is an infrared aurora — superheated hydrogen molecules (H3+) energized by charged particles funneled along Jupiter's intense magnetic field lines. Jupiter's auroras are far more powerful than Earth's northern lights, driven partly by the volcanic moon Io, which constantly spews sulfur and other ions into Jupiter's magnetosphere. Webb detected these auroras with exceptional clarity, revealing their structure and variability in real time. If you could stand at Jupiter's north pole, the aurora above you would be stretching thousands of kilometers into space — and the sky itself would be roaring with energy invisible to human eyes."
+    },
+    {
+      "id": "ring-system",
+      "label": "Jupiter's Ring System",
+      "x": 0.8,
+      "y": 0.4,
+      "description": "The faint diagonal streak visible here is Jupiter's ring system — far less dramatic than Saturn's but real and surprisingly intricate, composed mostly of dust knocked off the inner moons by micrometeorite impacts rather than ice. Webb's infrared sensitivity and the particular viewing angle at the time of this observation made the rings visible in far more detail than is usually possible. The rings were not discovered until 1979, when the Voyager 1 spacecraft passed close enough to photograph them. Does knowing that even our familiar solar system held secrets concealed until a spacecraft flew past change how you think about what might be hiding in more distant planetary systems?"
+    },
+    {
+      "id": "equatorial-haze-band",
+      "label": "Equatorial Atmospheric Haze",
+      "x": 0.5,
+      "y": 0.45,
+      "description": "The brighter band stretching across Jupiter's equatorial region is a layer of high-altitude haze — aerosol particles lofted into the upper atmosphere by powerful updrafts in the equatorial jet streams. In Webb's infrared view, this haze scatters and reflects differently than the lower cloud decks, making the equatorial zone appear brighter than the surrounding bands. Jupiter's banded structure is the surface expression of deep convective cells driven by internal heat — Jupiter radiates more energy than it receives from the Sun. Could similar atmospheric dynamics be driving weather systems on the gas giants orbiting other stars, worlds we can now detect but not yet see in this kind of detail?"
+    }
+  ],
+  "scaleTranslations": [
+    "Jupiter is so large that roughly 1,300 Earths could fit inside its volume — and the Great Red Spot storm alone is wide enough to swallow Earth whole with room to spare.",
+    "The auroras glowing at Jupiter's poles extend thousands of kilometers above the cloud tops; the energy driving them comes partly from Io, a moon 421,000 kilometers away that feeds Jupiter's magnetic field with volcanic ions.",
+    "Even at its closest approach of about 628 million kilometers, Jupiter is so far that light takes nearly 35 minutes to travel between us — meaning you are seeing the planet as it was more than half an hour ago."
+  ],
+  "nasaSource": "https://www.nasa.gov/image-article/nasas-webb-depicts-dramatic-views-of-jupiters-auroras/",
+  "releaseDate": "2022-08-22"
+}

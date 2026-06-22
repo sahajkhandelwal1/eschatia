@@ -7,14 +7,24 @@ import { useCinematicTransition } from '../hooks/useCinematicTransition';
 
 import carinaNebula from '../data/destinations/carina-nebula.json';
 import cartwheelGalaxy from '../data/destinations/cartwheel-galaxy.json';
+import crabNebula from '../data/destinations/crab-nebula.json';
+import herbigHaro211 from '../data/destinations/herbig-haro-211.json';
+import ic1623 from '../data/destinations/ic-1623.json';
+import jupiter from '../data/destinations/jupiter.json';
+import l1527 from '../data/destinations/l1527.json';
 import neptuneRings from '../data/destinations/neptune-rings.json';
+import ngc346 from '../data/destinations/ngc-346.json';
+import ngc7469 from '../data/destinations/ngc-7469.json';
+import orionNebula from '../data/destinations/orion-nebula.json';
 import phantomGalaxy from '../data/destinations/phantom-galaxy.json';
 import pillarsOfCreation from '../data/destinations/pillars-of-creation.json';
+import rhoOphiuchi from '../data/destinations/rho-ophiuchi.json';
 import smacs0723 from '../data/destinations/smacs-0723.json';
 import southernRingNebula from '../data/destinations/southern-ring-nebula.json';
 import stephansQuintet from '../data/destinations/stephans-quintet.json';
 import tarantulaNebula from '../data/destinations/tarantula-nebula.json';
 import webbsFirstDeepField from '../data/destinations/webbs-first-deep-field.json';
+import wolfRayet124 from '../data/destinations/wolf-rayet-124.json';
 
 const ALL_DESTINATIONS = [
   pillarsOfCreation,
@@ -27,6 +37,16 @@ const ALL_DESTINATIONS = [
   neptuneRings,
   phantomGalaxy,
   webbsFirstDeepField,
+  crabNebula,
+  rhoOphiuchi,
+  wolfRayet124,
+  ngc346,
+  jupiter,
+  ic1623,
+  herbigHaro211,
+  ngc7469,
+  orionNebula,
+  l1527,
 ];
 
 const fadeUp = {
@@ -72,7 +92,7 @@ export default function Explore() {
             Where do you want to go?
           </h1>
           <p className="text-white/40 text-sm mt-3 max-w-md">
-            Ten narrated journeys through the universe's most astonishing Webb imagery.
+            Twenty narrated journeys through the universe's most astonishing Webb imagery.
             Each one a different chapter of cosmic history.
           </p>
         </motion.div>

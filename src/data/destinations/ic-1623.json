@@ -1,0 +1,52 @@
+{
+  "id": "ic-1623",
+  "name": "IC 1623",
+  "type": "Merging galaxies",
+  "distance": "270 million light-years",
+  "constellation": "Cetus",
+  "image": "https://cdn.esawebb.org/archives/images/thumb700x/weic2211b.jpg",
+  "introduction": "You're looking at two galaxies in the final, catastrophic act of becoming one. IC 1623 lies 270 million light-years away in Cetus — and what appears here as a single tangled object was once two separate spiral galaxies, each home to hundreds of billions of stars. They've already passed through each other and are now locked in a gravitational embrace so intense it has triggered a burst of star formation twenty times more furious than anything happening in our own Milky Way today. The dust-smothered core blazes so brightly in infrared that it outshines everything around it — a furnace that Hubble's visible-light eyes could never penetrate. Webb's infrared vision has stripped away that veil for the first time. Explore the hotspots to witness the moment two galaxies cease to exist and something entirely new is born.",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 1112,
+    "height": 1176,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2211b/"
+  },
+  "hotspots": [
+    {
+      "id": "merging-nuclei",
+      "label": "The Merging Nuclei",
+      "x": 0.5,
+      "y": 0.45,
+      "description": "At the heart of IC 1623 lie the remnant cores of two galaxies that were once separate islands of stars — now compressed into a single, blinding knot of infrared light. The merger has funneled enormous quantities of gas toward the center, feeding a starburst so intense that thousands of new stars ignite here every year. This core is so dust-choked that even infrared light struggles to escape cleanly, making Webb's penetrating gaze all the more remarkable. What becomes of a galaxy's identity when its very center merges with another?"
+    },
+    {
+      "id": "tidal-tail",
+      "label": "Tidal Tail Arc",
+      "x": 0.25,
+      "y": 0.3,
+      "description": "Sweeping outward from the chaos of the merger is a tidal tail — a stream of stars and gas flung into intergalactic space by the gravitational violence of the collision. These stars were once safely embedded inside one of the two original galaxies; now they trace a ghostly arc hundreds of thousands of light-years long. Tidal tails can persist for hundreds of millions of years after the merger is complete, a scar written across the sky in starlight. How many solar systems were swept into the void along this arc, forever separated from the galaxy that made them?"
+    },
+    {
+      "id": "starburst-region",
+      "label": "Starburst Region",
+      "x": 0.55,
+      "y": 0.55,
+      "description": "Radiating outward from the central nuclei is the starburst zone — a region where the collision-driven compression of gas has ignited star formation at a rate that dwarfs anything in the local universe. Hundreds of massive, short-lived stars are being born and dying here in a cosmic chain reaction, each supernova triggering the collapse of the next gas cloud. Webb detected young star clusters embedded in this region that were completely invisible to previous observatories. If our Sun were forming here today, it would be surrounded by tens of thousands of stellar siblings being born simultaneously."
+    },
+    {
+      "id": "outer-halo",
+      "label": "Outer Diffuse Halo",
+      "x": 0.75,
+      "y": 0.25,
+      "description": "Beyond the tangled center, a faint diffuse halo of older stars wraps around the entire system — the ghostly remnant populations of both original galaxies, now too spread out to be pulled back into the dense core. These ancient stars orbit the merged system on long, looping paths that still carry the memory of their original galaxies' shapes. Dark matter halos from both galaxies have already merged into a single, larger invisible scaffold. What will this system look like in another billion years, when all the turmoil has settled into a single, quiet elliptical galaxy?"
+    }
+  ],
+  "scaleTranslations": [
+    "The two merging galaxies together span over 100,000 light-years — roughly the same diameter as our own Milky Way, meaning this entire collision is happening at a scale that would engulf every star we can see in the night sky.",
+    "The starburst rate in IC 1623's core is producing new stars so fast that if it maintained this pace, it would consume all available gas in just a few hundred million years — a single cosmic season.",
+    "The light you're seeing left IC 1623 270 million years ago, when the most complex life on Earth was trilobites and the continents were arranged in shapes we wouldn't recognize today."
+  ],
+  "nasaSource": "https://www.nasa.gov/image-article/webb-shows-never-before-seen-view-of-luminous-merging-galaxies/",
+  "releaseDate": "2022-08-02"
+}

@@ -1,0 +1,52 @@
+{
+  "id": "herbig-haro-211",
+  "name": "Herbig-Haro 211",
+  "type": "Protostellar jets",
+  "distance": "1,000 light-years",
+  "constellation": "Perseus",
+  "image": "https://cdn.esawebb.org/archives/images/thumb700x/weic2314a.jpg",
+  "introduction": "You're looking at a star being born — right now, in the most literal sense. Herbig-Haro 211 lies just 1,000 light-years away in Perseus, and the infant at its center is only a few tens of thousands of years old, a cosmic newborn that hasn't yet ignited the nuclear fires that will define it as a star. What it has done is launch two opposing jets of superheated gas into space at 100 kilometers per second — visible here as the twin orange-red streaks cutting symmetrically across the frame. These jets are one of the first things a protostar does, bleeding away excess angular momentum so it can continue to collapse and grow. Webb captured this scene in extraordinary detail, resolving bow-shock structures at the jet tips that had never been seen before. Explore the hotspots to witness a sun like ours in its very first breath.",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 1500,
+    "height": 1500,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2314a/"
+  },
+  "hotspots": [
+    {
+      "id": "hidden-protostar",
+      "label": "The Hidden Protostar",
+      "x": 0.5,
+      "y": 0.5,
+      "description": "At the exact center of the two jets lies the protostar itself — invisible at any wavelength because it is still completely buried inside the dense cocoon of gas and dust from which it is assembling. The object there is not yet a star in any technical sense: it hasn't reached the temperature and pressure needed to fuse hydrogen. But it is massive enough, and collapsing fast enough, that in perhaps another 100,000 years it will cross that threshold and ignite. You are looking at the silence before a star speaks. What does it mean that every star you've ever seen in the night sky passed through this exact invisible stage?"
+    },
+    {
+      "id": "northeast-jet",
+      "label": "Northeast Jet",
+      "x": 0.75,
+      "y": 0.35,
+      "description": "Shooting to the northeast, this jet of ionized gas has been launched by magnetic fields twisted around the protostar's rotation axis — a natural pressure-release valve for the angular momentum building up as material falls inward. The jet moves at roughly 100 kilometers per second, fast enough to cross the distance from Earth to the Moon in under four seconds. Webb's near-infrared instruments resolved individual knots and ripples within the jet that record fluctuations in the protostar's activity over time, like tree rings in starlight. Each knot is a pulse — what story is the infant star telling us with this rhythm?"
+    },
+    {
+      "id": "southwest-jet",
+      "label": "Southwest Jet",
+      "x": 0.25,
+      "y": 0.65,
+      "description": "The opposing southwestern jet is the near-mirror image of its counterpart — evidence that the launching mechanism is deeply symmetric, rooted in the geometry of magnetic fields threading through the disk. The two jets together act as a gyroscope, keeping the protostar's spin axis stable as it grows. Minor asymmetries between the two jets hint at small-scale turbulence around the protostar's disk. If our own Sun launched jets like these 4.6 billion years ago, they would have carved cavities through the same molecular cloud that eventually became the material for Earth."
+    },
+    {
+      "id": "bow-shock",
+      "label": "Bow Shock Terminus",
+      "x": 0.85,
+      "y": 0.25,
+      "description": "At the farthest reach of the northeastern jet, the fast-moving gas slams into the slower surrounding molecular cloud and piles up into a curved bow shock — the same shape as the wave that forms in front of a supersonic aircraft. The collision heats the gas to thousands of degrees, making it glow in the near-infrared wavelengths that Webb sees so clearly. These bow shocks are among the most detailed ever imaged, revealing nested arc structures that record multiple ejection events from the young star. What would it feel like to be orbiting a planet in this system, watching a glowing bow shock slowly sweep across your sky?"
+    }
+  ],
+  "scaleTranslations": [
+    "The jets in HH 211 stretch roughly 0.1 light-years from tip to tip — meaning the newborn star has already influenced the space around it across a distance 1,000 times larger than our entire solar system.",
+    "At 100 km/s, the jet material would travel from Earth to the Sun in about 17 days — yet even at that speed, it takes thousands of years to reach the bow shock at the jet's tip.",
+    "The protostar at the center has only existed for tens of thousands of years — less than the time humans have been drawing on cave walls — yet it is already reshaping its stellar neighborhood."
+  ],
+  "nasaSource": "https://www.nasa.gov/image-article/webb-captures-the-birth-of-a-new-stellar-jet/",
+  "releaseDate": "2023-09-06"
+}

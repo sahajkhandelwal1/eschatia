@@ -1,0 +1,52 @@
+{
+  "id": "wolf-rayet-124",
+  "name": "Wolf-Rayet 124",
+  "type": "Dying massive star",
+  "distance": "15,000 light-years",
+  "constellation": "Sagitta",
+  "image": "https://cdn.esawebb.org/archives/images/thumb700x/weic2308a.jpg",
+  "introduction": "You're looking at a star in the last violent chapter of its life, caught in the act of tearing itself apart before a final catastrophic explosion. WR 124 is a Wolf-Rayet star — a category so rare and short-lived that only a few hundred are known in the entire Milky Way. It has already blasted away more than 10 times the mass of our Sun into surrounding space, and the clumpy nebula you see is not external gas but the star's own ejected outer layers, now glowing from ultraviolet radiation. At 15,000 light-years away, Webb has given us our sharpest-ever view of this kind of pre-supernova chaos, revealing dust condensing in the ejected material — the same kind of cosmic dust that was once incorporated into Earth. Explore the hotspots to examine a star writing the final pages of its biography in light.",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 3840,
+    "height": 2160,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2308a/"
+  },
+  "hotspots": [
+    {
+      "id": "central-star",
+      "label": "WR 124 — The Dying Star",
+      "x": 0.5,
+      "y": 0.5,
+      "description": "The brilliant point at the center is WR 124 itself — a star originally perhaps 20 or more times the mass of our Sun, now in its terminal Wolf-Rayet phase. In this stage, ferocious stellar winds strip the outer layers away at rates millions of times stronger than the solar wind that flows from our own Sun. WR 124 has shed more mass in this relatively brief phase than our Sun contains in total. Within perhaps a hundred thousand years, the core will collapse and detonate as a supernova. What will the region look like after that explosion has dispersed every last fragment of this star into the surrounding galaxy?"
+    },
+    {
+      "id": "inner-dust-clumps",
+      "label": "Inner Dust Clumps",
+      "x": 0.6,
+      "y": 0.4,
+      "description": "The knotted, irregular structures immediately surrounding the star are clumps of dust that have condensed in the ejected stellar material — a surprise, because theorists long debated whether dust could survive the intense radiation environment this close to a Wolf-Rayet star. Webb's infrared sensitivity confirmed the dust is real, observing it directly in emission for the first time. These dust grains are chemically complex — mixtures of carbon, silicon, and metals forged inside the star. The same kinds of grains were incorporated into our solar system's early dust cloud before the Sun ignited. Could the building blocks of planets be raining outward right now from this dying star?"
+    },
+    {
+      "id": "outer-gas-shell",
+      "label": "Outer Ejected Gas Shell",
+      "x": 0.2,
+      "y": 0.3,
+      "description": "The diffuse nebula extending outward from the star is WR 124's own atmosphere, ejected over thousands of years of stellar wind activity and now glowing in ionized hydrogen and other elements. Webb resolved this shell in far greater detail than any previous observatory, revealing its lumpy, asymmetric structure — evidence that the mass loss has not been uniform but happened in episodes or clumps. The nebula spans roughly 6 light-years across, and every atom in it was once fused inside the star from lighter elements. How many generations of stellar life and death were required to produce the chemical richness we see drifting through this shell?"
+    },
+    {
+      "id": "companion-structure",
+      "label": "Nebular Filaments",
+      "x": 0.75,
+      "y": 0.7,
+      "description": "The fainter arcs and filaments visible in the outer nebula trace the complex flow patterns of stellar material as it collides with the slower-moving interstellar medium. Where the fast wind meets slower gas, instabilities form ridges and sheets of compressed material that glow in infrared. Some of the structure here may also reflect asymmetries in the star's mass loss — possibly influenced by rapid rotation or an unseen companion. The chaotic beauty of these patterns encodes the entire mass-loss history of the star. Is what you're looking at the dying breath of a star, or the birth cry of a future nebula?"
+    }
+  ],
+  "scaleTranslations": [
+    "WR 124 has ejected more than 10 solar masses of material into its surrounding nebula — equivalent to discarding more than 3 million Earths worth of mass into space, with more leaving every second.",
+    "The Wolf-Rayet phase lasts only a few hundred thousand years — a cosmic instant, yet long enough that this star has had time to shed enough gas to fill the entire volume of our solar system many times over.",
+    "The nebula surrounding WR 124 stretches roughly 6 light-years across; if our Sun were at its center, the edge of this nebula would extend well past Alpha Centauri into the interstellar void."
+  ],
+  "nasaSource": "https://www.nasa.gov/image-article/webb-captures-dying-star-before-explosive-death/",
+  "releaseDate": "2023-03-14"
+}

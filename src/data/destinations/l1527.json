@@ -1,0 +1,52 @@
+{
+  "id": "l1527",
+  "name": "L1527 (Cosmic Hourglass)",
+  "type": "Protostar",
+  "distance": "460 light-years",
+  "constellation": "Taurus",
+  "image": "https://cdn.esawebb.org/archives/images/thumb700x/weic2219a.jpg",
+  "introduction": "You're looking at the very first chapter of a star's story — and our own solar system's origin written in gas and dust. L1527 IRS lies just 460 light-years away in Taurus, one of the nearest star-forming regions to Earth, and the hourglass shape you see is not a star itself but the environment a star is building around it. The infant protostar, roughly 100,000 years old, is hidden entirely inside the dark band crossing the center of the image — a protoplanetary disk seen edge-on, 1.5 times the width of our solar system, inside which the raw material for future planets is already gathering. Above and below, twin cavities blown out by the protostar's jets glow in shades of blue and orange, their walls lit by the star they conceal. Webb captured this scene with unprecedented clarity, resolving the disk's edge against the glowing cavities for the first time. Explore the hotspots to follow the geometry of a solar system still deciding what it will become.",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 4373,
+    "height": 4462,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2219a/"
+  },
+  "hotspots": [
+    {
+      "id": "protoplanetary-disk",
+      "label": "Edge-On Protoplanetary Disk",
+      "x": 0.5,
+      "y": 0.5,
+      "description": "The dark band slicing horizontally across the center of the hourglass is the protoplanetary disk — a flat, rotating structure of gas and dust roughly 1.5 times the diameter of our solar system, seen exactly edge-on by chance. The disk is so dense that it blocks the light of both the hidden protostar and the glowing cavities behind it, appearing as a sharp dark lane against the luminous background. Within this disk, dust grains are slowly sticking together, building pebbles, then boulders, then the seeds of future planets — the same process that assembled Earth 4.6 billion years ago. Is there already a rocky core forming somewhere in this dark band that will one day harbor life?"
+    },
+    {
+      "id": "upper-cavity",
+      "label": "Upper Hourglass Cavity",
+      "x": 0.45,
+      "y": 0.2,
+      "description": "The glowing upper lobe of the hourglass is a cavity carved into the surrounding molecular cloud by the protostar's jets and outflows over the past 100,000 years. The walls of the cavity glow blue in Webb's near-infrared imaging because they are composed of smaller, finer dust particles that scatter shorter-wavelength light — the same reason Earth's sky is blue. As the protostar grows and its jets strengthen, this cavity will continue to expand, eventually dissolving the cloud that once hid the star entirely. The upper lobe appears slightly brighter than the lower because it tilts marginally toward us. What would this cavity look like from inside, with the hidden star at your feet?"
+    },
+    {
+      "id": "lower-cavity",
+      "label": "Lower Hourglass Cavity",
+      "x": 0.55,
+      "y": 0.8,
+      "description": "The lower lobe of the hourglass glows in deeper oranges and reds, colors produced by larger, coarser dust grains on the far side of the disk scattering longer-wavelength light — the near-infrared equivalent of a sunset's warm hues. The asymmetry in color between the two lobes is not coincidental: it is a map of dust grain sizes above and below the disk, a detail only Webb's instruments could resolve. Both lobes are still actively being excavated by the protostar's ongoing jets. In another million years, these cavities will have merged into a single cleared space and the new star will be fully exposed to interstellar view for the first time."
+    },
+    {
+      "id": "cavity-wall",
+      "label": "Glowing Cavity Wall",
+      "x": 0.3,
+      "y": 0.45,
+      "description": "Along the left edge of the upper lobe, the wall of the cavity glows with particular intensity — the place where the outflowing material from the protostar meets the dense surrounding molecular cloud and is brought to a halt. This boundary is where kinetic energy is converted to heat and then to light, making it one of the most dynamic interfaces in the entire system. Filaments and wisps of structure trace turbulent mixing between the hot outflow and the cold cloud. If you could stand at this boundary, you would be at the precise frontier between the star's growing sphere of influence and the ancient, undisturbed cloud it was born from."
+    }
+  ],
+  "scaleTranslations": [
+    "The protoplanetary disk at the center of L1527 is roughly 1.5 times the diameter of our solar system — meaning if our Sun were the protostar, the disk would extend 1.5 times the distance to Neptune in every direction.",
+    "The entire hourglass structure spans about a tenth of a light-year — a scale that sounds small, but would take our fastest spacecraft tens of thousands of years to cross.",
+    "At only 100,000 years old, this protostar has existed for about 1/50,000th of the current age of the universe — proportionally younger than a one-day-old human is compared to a human lifetime."
+  ],
+  "nasaSource": "https://www.nasa.gov/image-article/webbs-view-of-a-newborn-star/",
+  "releaseDate": "2022-11-16"
+}
