@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useRef, useState, useEffect, useCallback } from 'react';
-import Starfield from '../components/Starfield';
+import StarfieldCanvas from '../components/StarfieldCanvas';
 import HorizonHero from '../components/HorizonHero';
 import DestinationCard from '../components/DestinationCard';
 import CinematicOverlay from '../components/CinematicOverlay';
@@ -72,7 +72,7 @@ export default function Landing() {
 
   return (
     <div className="relative min-h-screen bg-space-950 text-white overflow-x-hidden">
-      <Starfield />
+      <div className="fixed inset-0 pointer-events-none z-0" aria-hidden="true"><StarfieldCanvas /></div>
 
       {/* Nav */}
       <nav className="relative z-10 flex items-center justify-between px-6 md:px-10 py-5">
