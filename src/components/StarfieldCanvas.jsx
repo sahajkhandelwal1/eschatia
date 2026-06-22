@@ -99,18 +99,16 @@ export default function StarfieldCanvas({
 
     const draw = () => {
       const { ctx, w, h, star } = sd.current;
-      // Semi-transparent fill creates trailing effect
-      ctx.fillStyle = `rgba(4,4,8,${opacity})`;
-      ctx.fillRect(0, 0, w, h);
-      ctx.strokeStyle = starColor;
+      ctx.clearRect(0, 0, w, h);
       star.arr.forEach(s => {
-        if (s[5] > 0 && s[5] < w && s[6] > 0 && s[6] < h && s[7]) {
-          ctx.lineWidth = (1 - sd.current.star.colorRatio * s[2]) * 2;
+        if (s[3] > 0 && s[3] < w && s[4] > 0 && s[4] < h && s[7]) {
+          const proximity = 1 - sd.current.star.colorRatio * s[2];
+          const radius = Math.max(0.4, proximity * 1.8);
+          const alpha = Math.max(0.15, proximity * 0.9);
+          ctx.fillStyle = `rgba(255,255,255,${alpha})`;
           ctx.beginPath();
-          ctx.moveTo(s[5], s[6]);
-          ctx.lineTo(s[3], s[4]);
-          ctx.stroke();
-          ctx.closePath();
+          ctx.arc(s[3], s[4], radius, 0, Math.PI * 2);
+          ctx.fill();
         }
       });
     };
