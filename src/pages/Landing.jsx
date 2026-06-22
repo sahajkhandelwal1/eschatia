@@ -1,15 +1,39 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useRef, useState, useEffect, useCallback } from 'react';
 import Starfield from '../components/Starfield';
 import HorizonHero from '../components/HorizonHero';
 import DestinationCard from '../components/DestinationCard';
 import CinematicOverlay from '../components/CinematicOverlay';
 import { useCinematicTransition } from '../hooks/useCinematicTransition';
-import pillars from '../data/destinations/pillars-of-creation.json';
-import smacs from '../data/destinations/smacs-0723.json';
-import carina from '../data/destinations/carina-nebula.json';
 
-const FEATURED = [pillars, smacs, carina];
+import carinaNebula from '../data/destinations/carina-nebula.json';
+import cartwheelGalaxy from '../data/destinations/cartwheel-galaxy.json';
+import crabNebula from '../data/destinations/crab-nebula.json';
+import herbigHaro211 from '../data/destinations/herbig-haro-211.json';
+import ic1623 from '../data/destinations/ic-1623.json';
+import jupiter from '../data/destinations/jupiter.json';
+import l1527 from '../data/destinations/l1527.json';
+import neptuneRings from '../data/destinations/neptune-rings.json';
+import ngc346 from '../data/destinations/ngc-346.json';
+import ngc7469 from '../data/destinations/ngc-7469.json';
+import orionNebula from '../data/destinations/orion-nebula.json';
+import phantomGalaxy from '../data/destinations/phantom-galaxy.json';
+import pillarsOfCreation from '../data/destinations/pillars-of-creation.json';
+import rhoOphiuchi from '../data/destinations/rho-ophiuchi.json';
+import smacs0723 from '../data/destinations/smacs-0723.json';
+import southernRingNebula from '../data/destinations/southern-ring-nebula.json';
+import stephansQuintet from '../data/destinations/stephans-quintet.json';
+import tarantulaNebula from '../data/destinations/tarantula-nebula.json';
+import webbsFirstDeepField from '../data/destinations/webbs-first-deep-field.json';
+import wolfRayet124 from '../data/destinations/wolf-rayet-124.json';
+
+const ALL_DESTINATIONS = [
+  pillarsOfCreation, rhoOphiuchi, crabNebula, tarantulaNebula, l1527,
+  smacs0723, carinaNebula, wolfRayet124, stephansQuintet, herbigHaro211,
+  southernRingNebula, jupiter, cartwheelGalaxy, ngc346, ngc7469,
+  neptuneRings, ic1623, phantomGalaxy, orionNebula, webbsFirstDeepField,
+];
 
 const STATS = [
   { value: '13.8B', label: 'years of lookback time' },
@@ -19,6 +43,32 @@ const STATS = [
 
 export default function Landing() {
   const { cardRefs, transition, blackOverlay, handleEnter } = useCinematicTransition();
+  const carouselRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const updateScrollState = useCallback(() => {
+    const el = carouselRef.current;
+    if (!el) return;
+    setCanScrollLeft(el.scrollLeft > 4);
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 4);
+  }, []);
+
+  useEffect(() => {
+    const el = carouselRef.current;
+    if (!el) return;
+    updateScrollState();
+    el.addEventListener('scroll', updateScrollState, { passive: true });
+    return () => el.removeEventListener('scroll', updateScrollState);
+  }, [updateScrollState]);
+
+  function scrollCarousel(dir) {
+    const el = carouselRef.current;
+    if (!el) return;
+    const card = el.querySelector('[data-card]');
+    const cardWidth = card ? card.offsetWidth + 16 : 320;
+    el.scrollBy({ left: dir * cardWidth, behavior: 'smooth' });
+  }
 
   return (
     <div className="relative min-h-screen bg-space-950 text-white overflow-x-hidden">
@@ -64,36 +114,73 @@ export default function Landing() {
         </div>
       </motion.div>
 
-      {/* Featured destinations */}
-      <section className="relative z-10 max-w-6xl mx-auto px-6 py-20">
+      {/* Featured destinations carousel */}
+      <section className="relative z-10 py-20">
+        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-10"
+          className="px-6 max-w-6xl mx-auto flex items-end justify-between mb-8"
         >
-          <p className="text-gold text-xs uppercase tracking-widest mb-2">Featured destinations</p>
-          <h2 className="text-2xl md:text-3xl font-light text-white">
-            Choose where you want to go
-          </h2>
+          <div>
+            <p className="text-gold text-xs uppercase tracking-widest mb-2">Featured destinations</p>
+            <h2 className="text-2xl md:text-3xl font-light text-white">Choose where you want to go</h2>
+          </div>
+
+          {/* Arrow controls */}
+          <div className="hidden sm:flex items-center gap-2">
+            <button
+              onClick={() => scrollCarousel(-1)}
+              disabled={!canScrollLeft}
+              aria-label="Previous"
+              className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:border-gold/50 hover:text-gold transition-all duration-200 disabled:opacity-20 disabled:cursor-not-allowed"
+            >
+              ←
+            </button>
+            <button
+              onClick={() => scrollCarousel(1)}
+              disabled={!canScrollRight}
+              aria-label="Next"
+              className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:border-gold/50 hover:text-gold transition-all duration-200 disabled:opacity-20 disabled:cursor-not-allowed"
+            >
+              →
+            </button>
+          </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {FEATURED.map((dest, i) => (
-            <motion.div
+        {/* Scrollable track */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.15 }}
+          ref={carouselRef}
+          className="flex gap-4 overflow-x-auto scroll-smooth px-6 pb-4"
+          style={{
+            scrollSnapType: 'x mandatory',
+            msOverflowStyle: 'none',
+            scrollbarWidth: 'none',
+          }}
+        >
+          {ALL_DESTINATIONS.map((dest) => (
+            <div
               key={dest.id}
+              data-card
               ref={(el) => { if (el) cardRefs.current[dest.id] = el; }}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              className="flex-none w-[78vw] sm:w-[42vw] lg:w-[30vw] max-w-sm"
+              style={{ scrollSnapAlign: 'start' }}
             >
               <DestinationCard destination={dest} onEnter={(id) => handleEnter(id, dest.image)} />
-            </motion.div>
+            </div>
           ))}
-        </div>
 
+          {/* Trailing padding so last card doesn't sit flush against edge */}
+          <div className="flex-none w-4" aria-hidden="true" />
+        </motion.div>
+
+        {/* See all link */}
         <motion.div
           className="mt-8 text-center"
           initial={{ opacity: 0 }}
