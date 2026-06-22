@@ -1,12 +1,13 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 import Viewer from '../components/Viewer';
 import NarrationPanel from '../components/NarrationPanel';
 import HotspotOverlay from '../components/HotspotOverlay';
 import ScaleSidebar from '../components/ScaleSidebar';
+import AmbientMode from '../components/AmbientMode';
 
 import carinaNebula from '../data/destinations/carina-nebula.json';
 import cartwheelGalaxy from '../data/destinations/cartwheel-galaxy.json';
@@ -57,8 +58,10 @@ export default function Destination() {
   const navigate = useNavigate();
   const destination = DESTINATIONS[id];
   const [viewer, setViewer] = useState(null);
+  const [ambientMode, setAmbientMode] = useState(false);
 
   const navTo = (path) => navigate(path);
+  const exitAmbient = useCallback(() => setAmbientMode(false), []);
 
   if (!destination) {
     return (
@@ -85,42 +88,57 @@ export default function Destination() {
         />
       </div>
 
-      <HotspotOverlay viewer={viewer} hotspots={destination.hotspots} />
+      {!ambientMode && <HotspotOverlay viewer={viewer} hotspots={destination.hotspots} />}
 
       {/* Top bar */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, delay: 0.6 }}
-        className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-5 py-4 bg-gradient-to-b from-space-950/80 to-transparent"
-      >
-        {/* Back button — always goes to explore */}
-        <button
-          onClick={() => navTo('/explore')}
-          className="flex items-center gap-2 text-white/60 hover:text-white transition-colors group"
+      {!ambientMode && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.6 }}
+          className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-5 py-4 bg-gradient-to-b from-space-950/80 to-transparent"
         >
-          <span className="text-sm group-hover:-translate-x-0.5 transition-transform">←</span>
-          <span className="text-xs uppercase tracking-widest">All destinations</span>
-        </button>
+          {/* Back button */}
+          <button
+            onClick={() => navTo('/explore')}
+            className="flex items-center gap-2 text-white/60 hover:text-white transition-colors group"
+          >
+            <span className="text-sm group-hover:-translate-x-0.5 transition-transform">←</span>
+            <span className="text-xs uppercase tracking-widest">All destinations</span>
+          </button>
 
-        {/* Destination name + distance */}
-        <div className="flex flex-col items-center">
-          <span className="text-white text-sm font-medium leading-tight">{destination.name}</span>
-          <span className="text-white/40 text-xs">{destination.distance}</span>
-        </div>
+          {/* Destination name + distance */}
+          <div className="flex flex-col items-center">
+            <span className="text-white text-sm font-medium leading-tight">{destination.name}</span>
+            <span className="text-white/40 text-xs">{destination.distance}</span>
+          </div>
 
-        {/* ἐσχατιά — always goes home */}
-        <button
-          onClick={() => navTo('/')}
-          className="text-white/60 hover:text-gold transition-colors"
-          aria-label="Home"
-        >
-          <span className="italic font-light text-sm">ἐσχατιά</span>
-        </button>
-      </motion.div>
+          {/* Right side: ambient toggle + home */}
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => setAmbientMode(true)}
+              className="text-white/40 hover:text-gold transition-colors text-[10px] uppercase tracking-widest"
+              title="Enter ambient / screensaver mode"
+            >
+              Ambient
+            </button>
+            <button
+              onClick={() => navTo('/')}
+              className="text-white/60 hover:text-gold transition-colors"
+              aria-label="Home"
+            >
+              <span className="italic font-light text-sm">ἐσχατιά</span>
+            </button>
+          </div>
+        </motion.div>
+      )}
 
-      <NarrationPanel destination={destination} />
-      <ScaleSidebar scaleTranslations={destination.scaleTranslations} />
+      {!ambientMode && <NarrationPanel destination={destination} />}
+      {!ambientMode && <ScaleSidebar scaleTranslations={destination.scaleTranslations} />}
+
+      {ambientMode && (
+        <AmbientMode viewer={viewer} destination={destination} onExit={exitAmbient} />
+      )}
     </div>
   );
 }
