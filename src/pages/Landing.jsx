@@ -105,7 +105,7 @@ export default function Landing() {
             to="/explore"
             className="text-white/40 text-sm uppercase tracking-widest hover:text-gold transition-colors"
           >
-            See all 10 destinations →
+            See all 20 destinations →
           </Link>
         </motion.div>
       </section>

@@ -14,7 +14,7 @@ NASA's JWST data is publicly accessible but practically inaccessible. Existing t
 
 ## Features (MVP)
 
-- 10 curated JWST destinations with hand-written narration
+- 20 curated JWST destinations with hand-written narration
 - Deep-zoom viewer powered by OpenSeadragon — pan and zoom at full resolution
 - Clickable hotspot markers with per-region explanations
 - Scale translations anchored to human-familiar distances and sizes

@@ -10,26 +10,46 @@ import ScaleSidebar from '../components/ScaleSidebar';
 
 import carinaNebula from '../data/destinations/carina-nebula.json';
 import cartwheelGalaxy from '../data/destinations/cartwheel-galaxy.json';
+import crabNebula from '../data/destinations/crab-nebula.json';
+import herbigHaro211 from '../data/destinations/herbig-haro-211.json';
+import ic1623 from '../data/destinations/ic-1623.json';
+import jupiter from '../data/destinations/jupiter.json';
+import l1527 from '../data/destinations/l1527.json';
 import neptuneRings from '../data/destinations/neptune-rings.json';
+import ngc346 from '../data/destinations/ngc-346.json';
+import ngc7469 from '../data/destinations/ngc-7469.json';
+import orionNebula from '../data/destinations/orion-nebula.json';
 import phantomGalaxy from '../data/destinations/phantom-galaxy.json';
 import pillarsOfCreation from '../data/destinations/pillars-of-creation.json';
+import rhoOphiuchi from '../data/destinations/rho-ophiuchi.json';
 import smacs0723 from '../data/destinations/smacs-0723.json';
 import southernRingNebula from '../data/destinations/southern-ring-nebula.json';
 import stephansQuintet from '../data/destinations/stephans-quintet.json';
 import tarantulaNebula from '../data/destinations/tarantula-nebula.json';
 import webbsFirstDeepField from '../data/destinations/webbs-first-deep-field.json';
+import wolfRayet124 from '../data/destinations/wolf-rayet-124.json';
 
 const DESTINATIONS = {
   'carina-nebula': carinaNebula,
   'cartwheel-galaxy': cartwheelGalaxy,
+  'crab-nebula': crabNebula,
+  'herbig-haro-211': herbigHaro211,
+  'ic-1623': ic1623,
+  'jupiter': jupiter,
+  'l1527': l1527,
   'neptune-rings': neptuneRings,
+  'ngc-346': ngc346,
+  'ngc-7469': ngc7469,
+  'orion-nebula': orionNebula,
   'phantom-galaxy': phantomGalaxy,
   'pillars-of-creation': pillarsOfCreation,
+  'rho-ophiuchi': rhoOphiuchi,
   'smacs-0723': smacs0723,
   'southern-ring-nebula': southernRingNebula,
   'stephans-quintet': stephansQuintet,
   'tarantula-nebula': tarantulaNebula,
   'webbs-first-deep-field': webbsFirstDeepField,
+  'wolf-rayet-124': wolfRayet124,
 };
 
 export default function Destination() {
