@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useCallback } from 'react';
 import Starfield from '../components/Starfield';
 import DestinationCard from '../components/DestinationCard';
 import CinematicOverlay from '../components/CinematicOverlay';
@@ -61,6 +62,11 @@ const fadeUp = {
 export default function Explore() {
   const { cardRefs, transition, blackOverlay, handleEnter } = useCinematicTransition();
 
+  const handleRandom = useCallback(() => {
+    const dest = ALL_DESTINATIONS[Math.floor(Math.random() * ALL_DESTINATIONS.length)];
+    handleEnter(dest.id, dest.image);
+  }, [handleEnter]);
+
   return (
     <div className="relative min-h-screen bg-space-950 text-white overflow-x-hidden">
       <Starfield />
@@ -95,6 +101,13 @@ export default function Explore() {
             Twenty narrated journeys through the universe's most astonishing Webb imagery.
             Each one a different chapter of cosmic history.
           </p>
+          <button
+            onClick={handleRandom}
+            className="group mt-6 flex items-center gap-3 px-6 py-3 bg-gold text-space-950 text-sm uppercase tracking-widest font-medium rounded hover:bg-gold-light transition-colors duration-200"
+          >
+            <span className="inline-block transition-transform duration-500 group-hover:rotate-180" aria-hidden="true">✦</span>
+            Take me anywhere
+          </button>
         </motion.div>
 
         {/* Grid */}
