@@ -1,0 +1,52 @@
+{
+  "id": "pandoras-cluster",
+  "name": "Pandora's Cluster",
+  "type": "Galaxy cluster",
+  "distance": "3.5 billion light-years",
+  "constellation": "Sculptor",
+  "image": "https://cdn.esawebb.org/archives/images/thumb700x/weic2305a.jpg",
+  "introduction": "You're looking at Pandora's Cluster — the collision of at least four galaxy clusters over billions of years, creating one of the most complex and massive structures Webb has ever captured. The image contains nearly 50,000 individual sources of near-infrared light packed into a patch of sky that would fit behind a grain of sand held at arm's length. Because the combined mass of all those galaxies is so immense, it bends the very fabric of spacetime around it, acting as a natural telescope — the arcing, smeared galaxies you see are not nearby objects distorted in place, but background galaxies billions of light-years further away, magnified and stretched into arcs by gravity. Explore the hotspots to understand why astronomers named this place after the Greek box that, once opened, could never be closed again.",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 17644,
+    "height": 13422,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2305a/"
+  },
+  "hotspots": [
+    {
+      "id": "cluster-core",
+      "label": "Merging Cluster Cores",
+      "x": 0.5,
+      "y": 0.5,
+      "description": "Unlike SMACS 0723 or most other lensing clusters, Pandora's Cluster is not one galaxy cluster but four separate clusters that have been falling toward each other and merging over billions of years. The bright galaxies here represent three distinct sub-clusters that arrived from different directions, while a fourth lies just outside the frame. Their merging has created a gravitational lens of unusual power and asymmetry — stronger on some sides than others, stretching background objects into arcs with different curvatures. Have you ever wondered what would happen if four cities-worth of galaxies collided at once?"
+    },
+    {
+      "id": "lensing-arcs",
+      "label": "Gravitational Lensing Arcs",
+      "x": 0.3,
+      "y": 0.65,
+      "description": "The elongated, curved streaks of light are not foreground objects — they are entire galaxies located billions of light-years beyond the cluster, whose light has been bent around the cluster's mass into arc shapes. Some of these background galaxies are magnified up to five times their apparent size by this natural cosmic telescope. Webb's resolution is sharp enough to see individual star-forming regions inside some of the lensed galaxies — features that would be invisible without the cluster's gravitational assistance. The same physics that Einstein predicted in 1915 is literally bringing the distant universe into focus for us."
+    },
+    {
+      "id": "dark-matter-halo",
+      "label": "Dark Matter Halo",
+      "x": 0.72,
+      "y": 0.32,
+      "description": "The distribution of gravitational lensing arcs around the cluster doesn't perfectly follow the visible galaxies — it traces the dark matter halo that makes up most of the cluster's mass. Scientists can map this invisible mass by tracing where the arcs appear and how they are curved, essentially using Einstein's gravity equations as a dark matter detector. In Pandora's Cluster, the dark matter from four separate clusters has not yet fully merged, creating an unusually lumpy gravitational landscape that produces some of the longest and most distorted arcs of any known cluster. Could this asymmetric dark matter distribution one day be used to trace the full merger history of the cluster?"
+    },
+    {
+      "id": "ancient-red-galaxies",
+      "label": "Ancient Red Galaxies",
+      "x": 0.18,
+      "y": 0.22,
+      "description": "The tiniest, reddest objects scattered across the image are some of the most distant galaxies Webb can detect — their light has been traveling toward us for more than 13 billion years and has been stretched into infrared by cosmic expansion. Some of these may be among the first galaxies that formed after the Big Bang, less than a billion years into cosmic history, and would be completely invisible without the cluster's gravitational magnification. Webb's ability to detect them is not just a technical achievement — it means astronomers can use Pandora's Cluster as a time machine, studying the universe as it looked when it was just 5% of its current age."
+    }
+  ],
+  "scaleTranslations": [
+    "Pandora's Cluster spans about 6 million light-years across — roughly 60 times wider than the Milky Way, yet the entire cluster appears smaller than a grain of sand held at arm's length against the night sky.",
+    "The four merging galaxy clusters contain thousands of individual galaxies each, yet they are crashing into one another so slowly — hundreds of kilometers per second — that the merger has been unfolding for longer than Earth has existed.",
+    "The gravitational lensing arcs represent galaxies 10–12 billion light-years away, meaning the light that made them visible left those galaxies when the universe was only 15–30% of its current age — before our own Sun and solar system existed."
+  ],
+  "nasaSource": "https://www.nasa.gov/image-article/webb-unveils-dark-matter-in-pandoras-cluster/",
+  "releaseDate": "2023-02-15"
+}

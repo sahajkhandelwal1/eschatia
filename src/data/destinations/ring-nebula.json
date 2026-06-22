@@ -1,0 +1,52 @@
+{
+  "id": "ring-nebula",
+  "name": "Ring Nebula (M57)",
+  "type": "Planetary nebula",
+  "distance": "2,500 light-years",
+  "constellation": "Lyra",
+  "image": "https://cdn.esawebb.org/archives/images/thumb700x/weic2320a.jpg",
+  "introduction": "You're looking at the future of our own Sun — a star that ran out of hydrogen, swelled into a red giant, and then gently expelled its outer layers into space over thousands of years, leaving behind a glowing shell of gas and a tiny, intensely hot white dwarf at its heart. The Ring Nebula is one of the most studied objects in the sky, but Webb's infrared eyes revealed something no telescope before it could show: delicate concentric rings and wispy tendrils that record each pulse of mass loss like growth rings in a tree. What looks like a simple ring from Earth is actually a three-dimensional barrel, seen end-on from our line of sight, filled with nested shells of gas spanning nearly a light-year. Explore the hotspots to zoom into the layers of a star's final gift to the cosmos.",
+  "tileSource": {
+    "type": "zoomifytileservice",
+    "width": 4097,
+    "height": 3428,
+    "tilesUrl": "https://cdn.esawebb.org/archives/images/zoomable/weic2320a/"
+  },
+  "hotspots": [
+    {
+      "id": "white-dwarf",
+      "label": "The White Dwarf",
+      "x": 0.5,
+      "y": 0.5,
+      "description": "At the very center sits the white dwarf — the exposed, compressed core of the original star, now roughly the size of Earth but containing more than half a solar mass. It blazes at 120,000°C, hot enough to ionize all the gas around it for light-years in every direction. This object will cool and fade over billions of years, slowly becoming a cold dark sphere — the same fate that awaits our own Sun in about 5 billion years. What will orbit this dying ember when it finally goes cold?"
+    },
+    {
+      "id": "inner-ring",
+      "label": "Inner Ionized Shell",
+      "x": 0.45,
+      "y": 0.38,
+      "description": "The vivid blue-green glow of the inner ring is ionized oxygen, energized to fluorescence by the white dwarf's ultraviolet radiation. The sharp inner boundary marks where the stellar wind from the dying star is still actively pushing against older, slower-moving gas — a collision front moving outward at 20 kilometers per second. Webb detected molecular hydrogen surviving just inside this boundary, a chemically chaotic zone where the star's radiation is tearing apart molecules formed in cooler outer layers."
+    },
+    {
+      "id": "outer-rings",
+      "label": "Nested Outer Shells",
+      "x": 0.22,
+      "y": 0.55,
+      "description": "The concentric rings beyond the main nebula are the discovery Webb made that no previous telescope could see clearly — up to ten distinct shells, each representing a separate episode of mass loss during the star's red giant phase. They are not smooth but subtly textured, hinting at magnetic fields or companions that shaped how material was ejected. The spacing between rings records the rhythm of the dying star's pulses over thousands of years. Could the original star have had a planetary system that disrupted these ejections, leaving asymmetric patterns in the rings?"
+    },
+    {
+      "id": "tendrils",
+      "label": "Radial Tendrils",
+      "x": 0.72,
+      "y": 0.28,
+      "description": "Spike-like tendrils radiate outward from the main ring into the surrounding space — narrow streamers of denser gas that managed to survive the star's ultraviolet onslaught by shielding themselves. These are thought to form where the fast, hot stellar wind catches up to slower, clumped material that was ejected earlier. Webb's resolution revealed more than twenty of them, each pointing directly away from the central star like compass needles, suggesting the ejection was not perfectly uniform but subtly chaotic at the end of the star's life."
+    }
+  ],
+  "scaleTranslations": [
+    "The main ring of the nebula spans about one light-year across — roughly the same distance as 63,000 trips from Earth to the Sun, all laid end to end.",
+    "The white dwarf at the center packs the mass of half a sun into a sphere the size of Earth, making it so dense that a teaspoon of its material would weigh about 15 tonnes.",
+    "The gas in the nebula is expanding outward at 20 km/s — fast enough to cross the continental United States in about 250 seconds, yet it will take another 10,000 years before the nebula disperses completely into interstellar space."
+  ],
+  "nasaSource": "https://www.nasa.gov/image-article/webb-reveals-new-details-and-mysteries-in-ring-nebula/",
+  "releaseDate": "2023-08-21"
+}

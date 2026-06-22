@@ -21,12 +21,12 @@ import ngc7469 from '../data/destinations/ngc-7469.json';
 import orionNebula from '../data/destinations/orion-nebula.json';
 import phantomGalaxy from '../data/destinations/phantom-galaxy.json';
 import pillarsOfCreation from '../data/destinations/pillars-of-creation.json';
-import rhoOphiuchi from '../data/destinations/rho-ophiuchi.json';
+import ringNebula from '../data/destinations/ring-nebula.json';
 import smacs0723 from '../data/destinations/smacs-0723.json';
 import southernRingNebula from '../data/destinations/southern-ring-nebula.json';
 import stephansQuintet from '../data/destinations/stephans-quintet.json';
 import tarantulaNebula from '../data/destinations/tarantula-nebula.json';
-import webbsFirstDeepField from '../data/destinations/webbs-first-deep-field.json';
+import pandorasCluster from '../data/destinations/pandoras-cluster.json';
 import wolfRayet124 from '../data/destinations/wolf-rayet-124.json';
 
 const DESTINATIONS = {
@@ -43,12 +43,12 @@ const DESTINATIONS = {
   'orion-nebula': orionNebula,
   'phantom-galaxy': phantomGalaxy,
   'pillars-of-creation': pillarsOfCreation,
-  'rho-ophiuchi': rhoOphiuchi,
+  'ring-nebula': ringNebula,
   'smacs-0723': smacs0723,
   'southern-ring-nebula': southernRingNebula,
   'stephans-quintet': stephansQuintet,
   'tarantula-nebula': tarantulaNebula,
-  'webbs-first-deep-field': webbsFirstDeepField,
+  'pandoras-cluster': pandorasCluster,
   'wolf-rayet-124': wolfRayet124,
 };
 
