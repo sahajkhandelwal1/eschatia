@@ -1,8 +1,36 @@
 // Live JWST data feed — latest science observations from the James Webb Space Telescope
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Starfield from '../components/Starfield';
+
+import carinaNebula from '../data/destinations/carina-nebula.json';
+import cartwheelGalaxy from '../data/destinations/cartwheel-galaxy.json';
+import crabNebula from '../data/destinations/crab-nebula.json';
+import herbigHaro211 from '../data/destinations/herbig-haro-211.json';
+import ic1623 from '../data/destinations/ic-1623.json';
+import jupiter from '../data/destinations/jupiter.json';
+import l1527 from '../data/destinations/l1527.json';
+import neptuneRings from '../data/destinations/neptune-rings.json';
+import ngc346 from '../data/destinations/ngc-346.json';
+import ngc7469 from '../data/destinations/ngc-7469.json';
+import orionNebula from '../data/destinations/orion-nebula.json';
+import phantomGalaxy from '../data/destinations/phantom-galaxy.json';
+import pillarsOfCreation from '../data/destinations/pillars-of-creation.json';
+import ringNebula from '../data/destinations/ring-nebula.json';
+import smacs0723 from '../data/destinations/smacs-0723.json';
+import southernRingNebula from '../data/destinations/southern-ring-nebula.json';
+import stephansQuintet from '../data/destinations/stephans-quintet.json';
+import tarantulaNebula from '../data/destinations/tarantula-nebula.json';
+import pandorasCluster from '../data/destinations/pandoras-cluster.json';
+import wolfRayet124 from '../data/destinations/wolf-rayet-124.json';
+
+const ALL_DESTINATIONS = [
+  pillarsOfCreation, ringNebula, crabNebula, tarantulaNebula, l1527,
+  smacs0723, carinaNebula, wolfRayet124, stephansQuintet, herbigHaro211,
+  southernRingNebula, jupiter, cartwheelGalaxy, ngc346, ngc7469,
+  neptuneRings, ic1623, phantomGalaxy, orionNebula, pandorasCluster,
+];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -163,9 +191,15 @@ function ObservationCard({ item, index }) {
 }
 
 export default function Discoveries() {
+  const navigate = useNavigate();
   const [entries, setEntries] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const handleRandom = useCallback(() => {
+    const dest = ALL_DESTINATIONS[Math.floor(Math.random() * ALL_DESTINATIONS.length)];
+    navigate(`/destination/${dest.id}`);
+  }, [navigate]);
 
   useEffect(() => {
     fetch('/api/discoveries')
@@ -190,6 +224,12 @@ export default function Discoveries() {
         <div className="flex items-center gap-6 text-white/50 text-xs uppercase tracking-widest">
           <Link to="/explore" className="hover:text-white transition-colors">Explore</Link>
           <Link to="/about" className="hover:text-white transition-colors">About</Link>
+          <button
+            onClick={handleRandom}
+            className="px-4 py-2 border border-gold/40 text-gold hover:bg-gold/10 transition-colors rounded text-xs uppercase tracking-widest"
+          >
+            Take me anywhere
+          </button>
         </div>
       </nav>
 
@@ -229,6 +269,39 @@ export default function Discoveries() {
             measure distances, temperatures, chemical compositions, and the motion of distant objects.
             Each one clicked will open the full archive record on STScI's MAST portal.
           </p>
+        </motion.div>
+
+        {/* Random destination CTA */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0.25}
+          className="mb-12 rounded-lg overflow-hidden border border-gold/20 bg-gradient-to-r from-gold/[0.06] to-transparent"
+        >
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-6">
+            <div>
+              <p className="text-gold text-xs uppercase tracking-widest mb-2">Prefer a guided experience?</p>
+              <p className="text-white text-lg font-light">
+                We've narrated 20 curated destinations — with hotspots, scale context, and deep-zoom imagery.
+              </p>
+              <p className="text-white/40 text-sm mt-1">
+                Not sure where to start? Let us pick for you.
+              </p>
+            </div>
+            <button
+              onClick={handleRandom}
+              className="flex-none group flex items-center gap-3 px-6 py-3 bg-gold text-space-950 text-sm uppercase tracking-widest font-medium rounded hover:bg-gold-light transition-colors duration-200 whitespace-nowrap"
+            >
+              <span
+                className="inline-block transition-transform duration-500 group-hover:rotate-180"
+                aria-hidden="true"
+              >
+                ✦
+              </span>
+              Take me anywhere
+            </button>
+          </div>
         </motion.div>
 
         {/* Skeleton grid while loading */}
