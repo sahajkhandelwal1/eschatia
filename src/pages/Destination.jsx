@@ -1,7 +1,7 @@
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 
 import Viewer from '../components/Viewer';
 import NarrationPanel from '../components/NarrationPanel';
@@ -64,9 +64,13 @@ export default function Destination() {
   const [ambientMode, setAmbientMode] = useState(() => routeState?.cinematic === true);
 
   const isShuffle = routeState?.shuffle === true;
+  const exitedAmbient = useRef(false);
 
   const navTo = (path) => navigate(path);
-  const exitAmbient = useCallback(() => setAmbientMode(false), []);
+  const exitAmbient = useCallback(() => {
+    exitedAmbient.current = true;
+    setAmbientMode(false);
+  }, []);
 
   const handleShuffleNext = useCallback(() => {
     const others = DESTINATION_IDS.filter((d) => d !== id);
@@ -106,9 +110,9 @@ export default function Destination() {
       {/* Top bar */}
       {!ambientMode && (
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={exitedAmbient.current ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.6 }}
+          transition={{ duration: 0.3, delay: exitedAmbient.current ? 0 : 0.6 }}
           className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-5 py-4 bg-gradient-to-b from-space-950/80 to-transparent"
         >
           {/* Back button */}
@@ -142,9 +146,9 @@ export default function Destination() {
       {/* Cinematic mode trigger — bottom-center, above both sidebars, clear of NarrationPanel */}
       {!ambientMode && (
         <motion.button
-          initial={{ opacity: 0, y: 10 }}
+          initial={exitedAmbient.current ? false : { opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 1.0 }}
+          transition={{ duration: 0.3, delay: exitedAmbient.current ? 0 : 1.0 }}
           onClick={() => setAmbientMode(true)}
           className="fixed bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 px-4 py-2 rounded-full bg-space-950/70 border border-white/20 backdrop-blur-sm text-white/60 hover:text-gold hover:border-gold/50 transition-all text-[10px] uppercase tracking-widest group"
           title="Enter cinematic / screensaver mode"
@@ -154,12 +158,11 @@ export default function Destination() {
         </motion.button>
       )}
 
-      {!ambientMode && <NarrationPanel destination={destination} />}
-      {!ambientMode && <ScaleSidebar scaleTranslations={destination.scaleTranslations} />}
+      {!ambientMode && <NarrationPanel destination={destination} skipDelay={exitedAmbient.current} />}
+      {!ambientMode && <ScaleSidebar scaleTranslations={destination.scaleTranslations} skipDelay={exitedAmbient.current} />}
 
       {ambientMode && (
         <AmbientMode
-          viewer={viewer}
           destination={destination}
           onExit={exitAmbient}
           onNext={isShuffle ? handleShuffleNext : undefined}

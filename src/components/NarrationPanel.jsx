@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
-export default function NarrationPanel({ destination }) {
+export default function NarrationPanel({ destination, skipDelay }) {
   const [collapsed, setCollapsed] = useState(false);
 
   return (
     <motion.div
-      initial={{ x: 320, opacity: 0 }}
+      initial={skipDelay ? false : { x: 320, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: 320, opacity: 0 }}
-      transition={{ type: 'spring', stiffness: 300, damping: 30, delay: 0.6 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 30, delay: skipDelay ? 0 : 0.6 }}
       className="fixed right-0 top-0 bottom-0 z-20 flex"
     >
       {/* Chevron toggle strip */}

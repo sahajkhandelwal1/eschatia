@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 
-export default function ScaleSidebar({ scaleTranslations }) {
+export default function ScaleSidebar({ scaleTranslations, skipDelay }) {
   if (!scaleTranslations?.length) return null;
 
   return (
     <motion.div
-      initial={{ y: 40, opacity: 0 }}
+      initial={skipDelay ? false : { y: 40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ type: 'spring', stiffness: 260, damping: 28, delay: 1.0 }}
+      transition={{ type: 'spring', stiffness: 260, damping: 28, delay: skipDelay ? 0 : 1.0 }}
       className="fixed bottom-6 left-6 z-20 max-w-xs"
     >
       <div className="bg-space-950/85 backdrop-blur-sm border border-white/10 rounded p-4">
