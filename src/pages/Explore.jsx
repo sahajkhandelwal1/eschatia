@@ -69,7 +69,7 @@ export default function Explore() {
 
   const handleDrift = useCallback(() => {
     const dest = ALL_DESTINATIONS[Math.floor(Math.random() * ALL_DESTINATIONS.length)];
-    handleEnter(dest.id, dest.image, { cinematic: true, shuffle: true });
+    handleEnter(dest.id, dest.image, { cinematic: true });
   }, [handleEnter]);
 
   return (

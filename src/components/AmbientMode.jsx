@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const PAN_SPEED = 0.00020; // viewport units per frame at 60 fps — slow drift
-
 function startAmbientAudio() {
   try {
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -41,9 +39,7 @@ function startAmbientAudio() {
 
 const SHUFFLE_INTERVAL_MS = 15_000;
 
-export default function AmbientMode({ viewer, destination, onExit, onNext }) {
-  const rafRef = useRef(null);
-  const panVel = useRef({ vx: 0, vy: 0 });
+export default function AmbientMode({ destination, onExit, onNext }) {
   const audioCtxRef = useRef(null);
   const [muted, setMuted] = useState(false);
   const [hintVisible, setHintVisible] = useState(true);
@@ -83,53 +79,6 @@ export default function AmbientMode({ viewer, destination, onExit, onNext }) {
     return () => clearTimeout(t);
   }, [onNext]);
 
-  // Slow auto-pan across the image
-  useEffect(() => {
-    if (!viewer) return;
-
-    // Ensure we're zoomed in enough to have room to drift
-    const homeZoom = viewer.viewport.getHomeZoom();
-    const currentZoom = viewer.viewport.getZoom();
-    if (currentZoom < homeZoom * 1.6) {
-      viewer.viewport.zoomTo(homeZoom * 1.8, undefined, false);
-    }
-
-    // Random initial direction
-    const angle = Math.random() * Math.PI * 2;
-    panVel.current = {
-      vx: Math.cos(angle) * PAN_SPEED,
-      vy: Math.sin(angle) * PAN_SPEED,
-    };
-
-    const tick = () => {
-      const vp = viewer.viewport;
-      const center = vp.getCenter();
-      let { vx, vy } = panVel.current;
-
-      // Bounce off image edges with a margin so the image never leaves screen
-      const item = viewer.world.getItemAt(0);
-      if (item) {
-        const b = item.getBounds();
-        const m = 0.12;
-        if (center.x - m <= b.x && vx < 0)               vx =  Math.abs(vx);
-        if (center.x + m >= b.x + b.width  && vx > 0)    vx = -Math.abs(vx);
-        if (center.y - m <= b.y && vy < 0)               vy =  Math.abs(vy);
-        if (center.y + m >= b.y + b.height && vy > 0)    vy = -Math.abs(vy);
-      }
-
-      // Tiny random walk so it never feels mechanical
-      vx += (Math.random() - 0.5) * 0.000006;
-      vy += (Math.random() - 0.5) * 0.000006;
-
-      panVel.current = { vx, vy };
-      vp.panBy({ x: vx, y: vy }, true);
-      rafRef.current = requestAnimationFrame(tick);
-    };
-
-    rafRef.current = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(rafRef.current);
-  }, [viewer]);
-
   // Ambient audio — created on mount (which is inside a user gesture)
   useEffect(() => {
     const ctx = startAmbientAudio();
@@ -148,6 +97,13 @@ export default function AmbientMode({ viewer, destination, onExit, onNext }) {
       className="fixed inset-0 z-50 cursor-none"
       onClick={onExit}
     >
+      {/* Full-screen image — plain img, no OSD dependency */}
+      <img
+        src={destination.image}
+        alt={destination.name}
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+      />
+
       {/* Fade-to-black on shuffle transition */}
       <AnimatePresence>
         {fadingOut && (
