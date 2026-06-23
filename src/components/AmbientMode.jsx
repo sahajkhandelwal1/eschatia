@@ -39,12 +39,15 @@ function startAmbientAudio() {
   }
 }
 
-export default function AmbientMode({ viewer, destination, onExit }) {
+const SHUFFLE_INTERVAL_MS = 15_000;
+
+export default function AmbientMode({ viewer, destination, onExit, onNext }) {
   const rafRef = useRef(null);
   const panVel = useRef({ vx: 0, vy: 0 });
   const audioCtxRef = useRef(null);
   const [muted, setMuted] = useState(false);
   const [hintVisible, setHintVisible] = useState(true);
+  const [fadingOut, setFadingOut] = useState(false);
   const hintTimer = useRef(null);
 
   // Hint fades out after 5s, reappears on mouse move
@@ -69,6 +72,16 @@ export default function AmbientMode({ viewer, destination, onExit }) {
     window.addEventListener('keydown', h);
     return () => window.removeEventListener('keydown', h);
   }, [onExit]);
+
+  // Shuffle to next destination after SHUFFLE_INTERVAL_MS
+  useEffect(() => {
+    if (!onNext) return;
+    const t = setTimeout(() => {
+      setFadingOut(true);
+      setTimeout(onNext, 800);
+    }, SHUFFLE_INTERVAL_MS);
+    return () => clearTimeout(t);
+  }, [onNext]);
 
   // Slow auto-pan across the image
   useEffect(() => {
@@ -135,15 +148,27 @@ export default function AmbientMode({ viewer, destination, onExit }) {
       className="fixed inset-0 z-50 cursor-none"
       onClick={onExit}
     >
+      {/* Fade-to-black on shuffle transition */}
+      <AnimatePresence>
+        {fadingOut && (
+          <motion.div
+            key="fadeout"
+            className="absolute inset-0 bg-black z-10 pointer-events-none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          />
+        )}
+      </AnimatePresence>
       {/* Bottom-left: persistent destination label for classroom projection */}
       <div className="absolute bottom-8 left-8 pointer-events-none select-none">
-        <p className="text-white/20 text-[10px] uppercase tracking-widest mb-1 font-light">
+        <p className="text-white/50 text-[10px] uppercase tracking-widest mb-1 font-light">
           {destination.type}&nbsp;·&nbsp;{destination.distance}
         </p>
-        <p className="text-white/35 text-2xl md:text-3xl font-light tracking-wide">
+        <p className="text-white/75 text-2xl md:text-3xl font-light tracking-wide">
           {destination.name}
         </p>
-        <p className="text-white/12 text-[10px] mt-1 uppercase tracking-widest" style={{ opacity: 0.12 }}>
+        <p className="text-white/30 text-[10px] mt-1 uppercase tracking-widest">
           James Webb Space Telescope · eschatia
         </p>
       </div>
@@ -163,7 +188,7 @@ export default function AmbientMode({ viewer, destination, onExit }) {
               transition={{ duration: 0.8 }}
               className="text-white/20 text-[10px] uppercase tracking-widest cursor-default"
             >
-              Esc · click anywhere to exit
+              {onNext ? 'Drifting · Esc to exit' : 'Esc · click anywhere to exit'}
             </motion.span>
           )}
         </AnimatePresence>

@@ -67,6 +67,11 @@ export default function Explore() {
     handleEnter(dest.id, dest.image);
   }, [handleEnter]);
 
+  const handleDrift = useCallback(() => {
+    const dest = ALL_DESTINATIONS[Math.floor(Math.random() * ALL_DESTINATIONS.length)];
+    handleEnter(dest.id, dest.image, { cinematic: true, shuffle: true });
+  }, [handleEnter]);
+
   return (
     <div className="relative min-h-screen bg-space-950 text-white overflow-x-hidden">
       <Starfield />
@@ -101,13 +106,22 @@ export default function Explore() {
             Twenty narrated journeys through the universe's most astonishing Webb imagery.
             Each one a different chapter of cosmic history.
           </p>
-          <button
-            onClick={handleRandom}
-            className="group mt-6 flex items-center gap-3 px-6 py-3 bg-gold text-space-950 text-sm uppercase tracking-widest font-medium rounded hover:bg-gold-light transition-colors duration-200"
-          >
-            <span className="inline-block transition-transform duration-500 group-hover:rotate-180" aria-hidden="true">✦</span>
-            Take me anywhere
-          </button>
+          <div className="mt-6 flex items-center gap-3 flex-wrap">
+            <button
+              onClick={handleRandom}
+              className="group flex items-center gap-3 px-6 py-3 bg-gold text-space-950 text-sm uppercase tracking-widest font-medium rounded hover:bg-gold-light transition-colors duration-200"
+            >
+              <span className="inline-block transition-transform duration-500 group-hover:rotate-180" aria-hidden="true">✦</span>
+              Take me anywhere
+            </button>
+            <button
+              onClick={handleDrift}
+              className="group flex items-center gap-3 px-6 py-3 border border-white/20 text-white/60 text-sm uppercase tracking-widest font-medium rounded hover:border-gold/50 hover:text-gold transition-all duration-200"
+            >
+              <span className="inline-block transition-transform duration-700 group-hover:rotate-[360deg]" aria-hidden="true">◎</span>
+              Drift anywhere
+            </button>
+          </div>
         </motion.div>
 
         {/* Grid */}

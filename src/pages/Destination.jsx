@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useState, useCallback } from 'react';
@@ -53,15 +53,28 @@ const DESTINATIONS = {
   'wolf-rayet-124': wolfRayet124,
 };
 
+const DESTINATION_IDS = Object.keys(DESTINATIONS);
+
 export default function Destination() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { state: routeState } = useLocation();
   const destination = DESTINATIONS[id];
   const [viewer, setViewer] = useState(null);
-  const [ambientMode, setAmbientMode] = useState(false);
+  const [ambientMode, setAmbientMode] = useState(() => routeState?.cinematic === true);
+
+  const isShuffle = routeState?.shuffle === true;
 
   const navTo = (path) => navigate(path);
   const exitAmbient = useCallback(() => setAmbientMode(false), []);
+
+  const handleShuffleNext = useCallback(() => {
+    const others = DESTINATION_IDS.filter((d) => d !== id);
+    const nextId = others[Math.floor(Math.random() * others.length)];
+    navigate(`/destination/${nextId}`, {
+      state: { cinematic: true, shuffle: true },
+    });
+  }, [id, navigate]);
 
   if (!destination) {
     return (
@@ -113,15 +126,8 @@ export default function Destination() {
             <span className="text-white/40 text-xs">{destination.distance}</span>
           </div>
 
-          {/* Right side: ambient toggle + home */}
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => setAmbientMode(true)}
-              className="text-white/40 hover:text-gold transition-colors text-[10px] uppercase tracking-widest"
-              title="Enter ambient / screensaver mode"
-            >
-              Ambient
-            </button>
+          {/* Right side: home */}
+          <div className="flex items-center">
             <button
               onClick={() => navTo('/')}
               className="text-white/60 hover:text-gold transition-colors"
@@ -133,11 +139,31 @@ export default function Destination() {
         </motion.div>
       )}
 
+      {/* Cinematic mode trigger — bottom-center, above both sidebars, clear of NarrationPanel */}
+      {!ambientMode && (
+        <motion.button
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 1.0 }}
+          onClick={() => setAmbientMode(true)}
+          className="fixed bottom-6 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 px-4 py-2 rounded-full bg-space-950/70 border border-white/20 backdrop-blur-sm text-white/60 hover:text-gold hover:border-gold/50 transition-all text-[10px] uppercase tracking-widest group"
+          title="Enter cinematic / screensaver mode"
+        >
+          <span className="text-base leading-none group-hover:scale-110 transition-transform">✦</span>
+          Cinematic
+        </motion.button>
+      )}
+
       {!ambientMode && <NarrationPanel destination={destination} />}
       {!ambientMode && <ScaleSidebar scaleTranslations={destination.scaleTranslations} />}
 
       {ambientMode && (
-        <AmbientMode viewer={viewer} destination={destination} onExit={exitAmbient} />
+        <AmbientMode
+          viewer={viewer}
+          destination={destination}
+          onExit={exitAmbient}
+          onNext={isShuffle ? handleShuffleNext : undefined}
+        />
       )}
     </div>
   );
